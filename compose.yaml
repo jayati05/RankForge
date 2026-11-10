@@ -1,0 +1,98 @@
+name: rankforge-local
+services:
+  mlflow:
+    profiles: [tracking]
+    image: ghcr.io/mlflow/mlflow:v3.5.1@sha256:ed8a62922a3a706aa89849b1beb57bfadcab53de5ea5ae37dd0486009eaad458
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:${RANKFORGE_MLFLOW_PORT:-5000}:5000"
+    command:
+      - mlflow
+      - server
+      - --host=0.0.0.0
+      - --port=5000
+      - --workers=1
+      - --backend-store-uri=sqlite:////mlflow/backend/mlflow.db
+      - --serve-artifacts
+      - --artifacts-destination=/mlflow/artifacts
+      - --allowed-hosts=localhost:*,127.0.0.1:*,mlflow:*
+    environment:
+      MLFLOW_HTTP_REQUEST_MAX_RETRIES: "0"
+    volumes:
+      - mlflow_backend:/mlflow/backend
+      - mlflow_artifacts:/mlflow/artifacts
+    restart: unless-stopped
+    stop_grace_period: 30s
+    mem_limit: ${RANKFORGE_MLFLOW_MEMORY_LIMIT:-1g}
+    cpus: ${RANKFORGE_MLFLOW_CPU_LIMIT:-2}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 6
+  api:
+    image: rankforge:phase7a
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:${RANKFORGE_PUBLISHED_PORT:-8000}:${RANKFORGE_PORT:-8000}"
+    environment:
+      RANKFORGE_HOST: "0.0.0.0"
+      RANKFORGE_PORT: "${RANKFORGE_PORT:-8000}"
+      RANKFORGE_DATASET_DIR: /resources/dataset
+      RANKFORGE_DENSE_MODEL_DIR: /resources/models/dense
+      RANKFORGE_RERANK_MODEL_DIR: /resources/models/reranker
+      RANKFORGE_DENSE_INDEX: /resources/indexes/${RANKFORGE_INDEX_FILENAME:-scifact-minilm-linux.npz}
+      RANKFORGE_POLICY_DIR: /resources/policy
+      RANKFORGE_DEFAULT_METHOD: "${RANKFORGE_DEFAULT_METHOD:-bm25}"
+      RANKFORGE_DEFAULT_TOP_K: "${RANKFORGE_DEFAULT_TOP_K:-10}"
+      RANKFORGE_THREADS: "${RANKFORGE_THREADS:-4}"
+      RANKFORGE_BATCH_SIZE: "${RANKFORGE_BATCH_SIZE:-16}"
+      RANKFORGE_LOG_LEVEL: "${RANKFORGE_LOG_LEVEL:-info}"
+    volumes:
+      - type: bind
+        source: ${RANKFORGE_DATASET_SOURCE:-./data/public/scifact}
+        target: /resources/dataset
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${RANKFORGE_MODELS_SOURCE:-./models}
+        target: /resources/models
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${RANKFORGE_INDEX_SOURCE:-./indexes}
+        target: /resources/indexes
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${RANKFORGE_POLICY_SOURCE:-./experiments/configs/phase4-transfer}
+        target: /resources/policy
+        read_only: true
+        bind:
+          create_host_path: false
+    mem_limit: ${RANKFORGE_MEMORY_LIMIT:-4g}
+    cpus: ${RANKFORGE_CPU_LIMIT:-4}
+    stop_grace_period: 60s
+    restart: "no"
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    healthcheck:
+      test: [CMD, python, docker/healthcheck.py]
+      interval: 15s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+volumes:
+  mlflow_backend:
+  mlflow_artifacts:

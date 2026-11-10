@@ -1,0 +1,50 @@
+# Local Python environments, caches and build outputs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local configuration and credentials; keep the public reference template
+.env
+.env.*
+!/.env.example
+secrets/
+.secrets/
+*.pem
+*.key
+credentials*.json
+service-account*.json
+id_rsa
+id_ed25519
+
+# Downloaded/prepared resources and complete local experiment outputs
+/data/public/
+/models/
+/indexes/
+/experiments/results/
+/experiments/tracking/
+/mlruns/
+/mlartifacts/
+
+# Public report selection; preserve other reports locally without publishing them
+/experiments/reports/*
+!/experiments/reports/scifact_bm25.json
+!/experiments/reports/phase2_scifact_25.json
+!/experiments/reports/phase2_scifact_full.json
+!/experiments/reports/phase3_scifact.json
+!/experiments/reports/phase4_nfcorpus.json
+!/experiments/reports/phase5-20261031T083003Z-c4676089f670.json
+!/experiments/reports/phase6_2-repeat-20261109T194018Z-c8b6ba59.json
+!/experiments/reports/phase7a-20261110T063328Z-3ae104cc.json
+!/experiments/reports/phase7b-20261110T073341Z-12c807e3.json
+
+# data/smoke/ and experiments/configs/phase4-transfer/ are intentional source inputs.

@@ -1,0 +1,82 @@
+{
+  "created_at_utc": "2026-10-31T07:11:51.226254+00:00",
+  "source_phase3": "C:\\Users\\Jayati\\Desktop\\RankForge\\experiments\\results\\phase3\\phase3-20261031T065803Z-72804b2af31a",
+  "source_run_id": "phase3-20261031T065803Z-72804b2af31a",
+  "source_metadata_sha256": "cbb2ad0a871134bd5ae8e972f6623b207c8eb3a4b9d7ee1bb5d2a4506fcce43d",
+  "policy_record_sha256": "31b0cef1d5969d2b79953be683050877038c34fabc4c560b4a1b8be8f90b67f8",
+  "policy_file_sha256": "68a6b6e0251f0f1b4da471e96e30711053c332d32704a0572483cf5f49213617",
+  "policy_implementation_sha256": {
+    "app/retrieval/router.py": "93b601ab284a34c038ee12fbe12fd9e7da73ef68cbfd4c888e35974464e928e8",
+    "app/evaluation/features.py": "2a90189d55c08bb45b9347ce443d62eef364ad2b87bef4489d6fd400930ec78e"
+  },
+  "pipeline_config": {
+    "split": "test",
+    "k": 10,
+    "max_queries": null,
+    "seed": 42,
+    "candidate_depth": 50,
+    "rrf_constant": 60,
+    "rerank_candidates": 20,
+    "batch_size": 16,
+    "threads": 4,
+    "dense_path": "models/dense",
+    "rerank_path": "models/reranker",
+    "cache": "indexes/nfcorpus-minilm.npz",
+    "require_cache": false
+  },
+  "reference_models": {
+    "dense": {
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "files_sha256": {
+        "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+        "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+        "data_config.json": "32edcb108fc2516b920734a862ae0692bcae1c5d45d5f8d972cb0d53434a4c54",
+        "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+        "README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+        "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+        "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+        "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+        "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "library_versions": {
+        "sentence-transformers": "5.1.2",
+        "transformers": "4.57.1",
+        "torch": "2.9.0",
+        "numpy": "2.2.6"
+      },
+      "max_length": 256,
+      "normalization": "l2-float32",
+      "input": "raw-title-space-text-v1"
+    },
+    "reranker": {
+      "model_name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "files_sha256": {
+        "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+        "model.safetensors": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+        "README.md": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa",
+        "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+        "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+        "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "library_versions": {
+        "sentence-transformers": "5.1.2",
+        "transformers": "4.57.1",
+        "torch": "2.9.0",
+        "numpy": "2.2.6"
+      },
+      "max_length": 512,
+      "input": "query + raw-title-space-text-v1",
+      "activation": "Identity (raw logits)"
+    }
+  },
+  "external_dataset": "beir-nfcorpus",
+  "evaluation_split": "test",
+  "rule": "Import exact Phase 3 policy; no external labels for tuning, routing or feature extraction",
+  "split_rationale": "Official BEIR test split, selected before label inspection; inspect split availability/counts during validated import, not for tuning"
+}

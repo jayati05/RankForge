@@ -1,0 +1,37 @@
+# Phase 2 retrieval and comparison methodology
+
+The public-data baseline remains unchanged: BEIR SciFact test, 5,183 documents, 300 queries, 339 supplied judgments, macro Recall/Precision/MRR/nDCG@10 as implemented and tested in Phase 1. Unjudged documents receive zero gain for evaluation, not a claim of known irrelevance. We compare four systems on exactly the same selected query IDs. Previous synthetic and public BM25 runs remain intact.
+
+## Model interfaces and provenance
+
+The [all-MiniLM-L6-v2 model card](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) documents sentence-transformers embeddings. The [cross-encoder model card](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2) documents pairwise prediction; both cards list Apache-2.0. RankForge uses [SentenceTransformer.encode](https://www.sbert.net/docs/package_reference/sentence_transformer/model.html) with normalized NumPy output and [CrossEncoder.predict](https://www.sbert.net/docs/package_reference/cross_encoder/model.html) with explicit Identity activation (raw logits). No model training or paid API is involved. Dependencies are optional, pinned in pyproject.toml; the measured complete environment is saved separately for this phase.
+
+The downloader uses the documented [Hugging Face snapshot/revision API](https://huggingface.co/docs/huggingface_hub/v0.36.0/guides/download). It resolves an immutable revision before fetching, selects safetensors plus model/tokenizer configuration, and records hashes. Local inference verifies manifest hashes and loads with local_files_only=True and trust_remote_code=False. Model initialization occurs once per comparison process. Model loading time includes snapshot verification/import/init and is recorded separately, not charged to individual queries. First import cost may fall on the sentence encoder; loading times are not a model-size comparison.
+
+Dense snapshot revision: `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`. Cross-encoder revision: `233902d25c440f23af6f7d6e94d2946bac0bee0a`. The exact downloaded files and versions are in run metadata. System certificate trust is used with HTTPS verification enabled. A first download attempt ran before dependency installation completed and returned missing huggingface_hub; retry after installation succeeded.
+
+## Index and ranking contracts
+
+Documents are ordered by string ID. Dense/cross-encoder document input is raw title + one space + text; lexical preprocessing remains specific to BM25. Dense embeddings are float32, nonzero, finite, normalized row-wise, with normalized query vectors and cosine dot products. A 384-dimensional vector matrix is built once; each search encodes only the query. The NumPy cache records full document IDs/content hash, model name/revision/file hashes, neural library versions, input preprocessing, length limit, dimension, normalization and vector checksum. Changes or corrupt/nonfinite/nonunit vectors cause rejection. Missing required caches fail explicitly. Rebuilding uses a new path instead of silently overwriting old indexes.
+
+RRF(d) = sum over BM25 and dense sources containing d of `1 / (60 + rank_source(d))`. Each source supplies its top 50. No learned weights or raw-score blending are used. RRF uses source ranks starting at 1, deduplicates IDs and sorts by descending fused score, then document ID.
+
+Reranking retrieves the top 20 fused candidates and scores each query/document pair once in batches of 16. Sorting uses descending raw logits, then document ID. The entire corpus is never passed to the cross-encoder; configurations with pool >= corpus size fail. The top 10 of the reranked pool are evaluated. Full pre/post pool rankings are saved, with actual candidate counts and incremental scoring/sorting time. Pool absence is an observable retrieval constraint; no causal explanation is inferred from rank changes alone.
+
+## Frozen evaluation and timing
+
+The frozen settings were recorded before scoring: CPU, 4 torch threads, batch 16, dense length 256, cross-encoder length 512, source depth 50, RRF constant 60, rerank pool 20, k=10. NumPy/BLAS threading may differ from torch threads; this is a single-process local CPU experiment, not throughput testing. Torch uses seed 42 and deterministic algorithms; the corpus/query ordering and tie rules are deterministic. Exact float equality across machines/library versions is not promised.
+
+The same SHA256(seed:query_id) subset selection as Phase 1 is used for the initial 25-query run, with full corpus and complete selected qrels. All four methods share this selection within each run. Parameters were not tuned on the test results. The test benchmark was already exposed in Phase 1; it is not an untouched validation set. Future tuning belongs on train/development data.
+
+Index setup is timed separately: BM25 build, dense cache load/validation or build, and sums for pipelines sharing those indexes. The dense cache also records original document-encoding/normalization duration; cache-hit setup must not be presented as fresh embedding construction time. Hybrid/reranked index setup is the sum of their two index dependencies, not a second physical build. Cross-encoder has model loading, but no document index.
+
+Warmup executes one authored, non-test query through each complete pipeline. Timed query evaluation rotates the system order deterministically by query index, running each pipeline independently. Query embeddings, source retrieval and candidates are recomputed for hybrid and reranked searches; no results are borrowed from the separately timed dense/BM25 searches. The reranked latency includes candidate retrieval plus pair scoring and sorting. Model/index loading, metrics and disk I/O are excluded. Exactly one warmed measurement per query/system is collected. p50/p95 use NumPy linear interpolation for at least 20 samples; these are descriptive, especially unstable for the 25-query diagnostic run. No confidence intervals, concurrent-user benchmark, cold-vs-warm comparison or peak-memory study is claimed.
+
+## Artifacts and observation limits
+
+The comparison saves status/configuration/source+code hashes, versions/hardware, query IDs, initialization/build/warmup times, and cache state. Per-query CSV and rankings are keyed by method/query ID. Candidate pools preserve the input and full output order of reranking. Disagreement records contain judged-positive document positions at top-k and within the pool, per-query metrics, pool presence, and observed nDCG improvement/regression. Null top-k position means outside the saved cutoff; full pool positions distinguish demotion from missing candidates.
+
+Replay validates the original input hashes, identical query sets, all saved rankings/metrics and candidate provenance, then recomputes aggregate values. Reports select the largest nDCG gains/losses from actual disagreement records, with query-ID tie breaking; no examples or metrics are illustrative. Such extreme examples are selected, not representative samples.
+
+These are compact English general-purpose models, with an MS MARCO-trained reranker applied to biomedical scientific evidence. Domain mismatch and truncation are limitations and possible hypotheses, not demonstrated causes of any individual failure. A document outside the top-20 pool cannot be recovered by reranking; longer abstracts may lose content at model length limits. No system is assumed to dominate every query, and no significance or universal superiority claim follows from one dataset.

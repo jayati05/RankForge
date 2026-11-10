@@ -1,0 +1,33 @@
+# Query-aware routing: internal exploratory experiment
+
+The original 300 BEIR SciFact test queries were inspected during Phase 2. This experiment uses a deterministic internal split of that exposed benchmark; it is not untouched external evaluation. A future external dataset is needed to assess generalization. The official BEIR train split remains available for broader future work; it is not silently mixed into this milestone.
+
+## Split and selection protocol
+
+Sort query IDs by SHA256 of UTF-8 `42:<query-id>`, breaking ties by ID. First floor(0.6*N) are development; next through floor(0.8*N) are validation; remainder are internal held-out. Within each group evaluate lexicographic query-ID order. Public sizes are 180/60/60. Exact IDs and method/seed are persisted before tuning in split_metadata.json. No group overlaps; every source ID appears once.
+
+A small rule family was predeclared before scoring: choose BM25 when rare-term proportion >= threshold and coverage >= 0.8; otherwise choose reranked hybrid for token count <= threshold; otherwise choose hybrid. Empty/tokenless queries select BM25. BM25 rare thresholds are 0.1, 0.25, 0.5, 1.01; rerank length thresholds are 0, 8, 16. A rare threshold of 1.01 explicitly disables the BM25 shortcut, and length zero disables reranking for nonempty queries. This makes hybrid-only a transparent fallback, not a hidden alternate model. Dense remains an independently evaluated baseline; it is not an additional routing branch in this limited family.
+
+Development scores shortlist the six highest-utility candidates whose reranker rate is at most 50%, plus the hybrid-only fallback. Validation chooses the best eligible shortlisted policy, again limiting reranker rate to 50% on validation. Utility is mean nDCG minus 0.1 times mean historical latency in seconds: an extra 100ms costs 0.01 nDCG in the objective. The penalty and budget were predeclared, not adjusted on held-out results. Latency estimates for selection come from Phase 2 same-query observations; the final router is timed freshly. This finite search cannot establish an optimal router.
+
+The tuning API rejects any outcomes mapping that contains held-out IDs or omits development/validation IDs. It consumes only those groups' outcomes; it does not accept full qrels. Frozen policy, exact tuning label IDs, objective, candidate scores and selection audit are saved before any fresh held-out evaluation. The policy's canonical SHA256 and ordered events prove the recorded execution order. Held-out outcomes are used only after freezing and never update thresholds. Full Phase 2 replay necessarily checks existing held-out metrics mechanically before this process; that integrity check does not select a policy and does not undo the benchmark's prior exposure.
+
+Validation selected the hybrid-only fallback (rare threshold 1.01, rerank length 0). The tested adaptive family did not improve the predeclared validation utility. This negative result is retained; no thresholds were changed to manufacture a nontrivial routing distribution. The implementation supports all three branches and tests their decisions independently, while the deployed experimental policy follows validation evidence.
+
+## Live inference and latency
+
+`QueryAwareRouter` accepts corpus lexical statistics, retrievers and a frozen RoutingPolicy. The decision receives a QueryFeatures object containing lexical features only, no query ID, qrels, ground-truth metrics or saved rankings. It returns selected strategy, exact rule explanation, features, reranker invocation, reranker-input candidate count, total latency, routing overhead and incremental reranking time. Candidate count zero means no reranker-input pool was requested; configured RRF source depth is in pipeline metadata. Cheap extraction does not run BM25/dense score diagnostics, so there is no concealed dense inference cost.
+
+Fresh held-out evaluation executes always-BM25, always-dense, always-hybrid, always-reranked and the router on the same 60 IDs, full corpus and unchanged metric settings. Models/indexes are loaded once outside query timing; one authored-text warmup runs per complete pipeline. System order rotates deterministically per query. Every system executes independently, including the selected router branch; saved source latency is not substituted for the router's wall-clock time. Router latency includes feature extraction and decision. Model paths/revisions and pipeline depths/pool/threads/batching inherit the replay-verified Phase 2 configuration. Corpus-statistics building is startup work, not per-query work.
+
+The hybrid-only policy should return the same ranks and metrics as standalone hybrid. Their independently measured latencies can differ from run-order, CPU and measurement noise; any apparent timing win for identical work is not evidence of algorithmic speedup.
+
+## Statistics, persistence and replay
+
+System comparisons retain all four metrics, mean/p50/p95 latency, reranker rate and fractional mean-latency savings versus always-reranking. The savings denominator is always-reranked mean latency. Routing evaluation records route fractions and paired router-minus-each-baseline differences for all metrics and latency. Percentile confidence intervals resample paired query indices 2,000 times, fixed seed 42. These intervals describe between-query variation in this small exposed sample; they are uncorrected for multiple comparisons and do not measure repeated-run timing noise or remove selection/exposure bias.
+
+Artifacts include routing_decisions.csv, routing_per_query.csv, routing_rankings.json, system_comparison.csv, routing_evaluation.json, frozen_policy.json, tuning_audit.json and split_metadata.json. Run metadata tracks events, source/data/software/code provenance, completion status and output hashes. Failure-analysis artifacts describe the original complete 300-query Phase 2 source separately. New directories preserve all earlier phases.
+
+Replay needs data and saved outputs, not neural inference. It validates source replay/hashes, artifact hashes, exact split, policy digest, tuning ID separation/event order, recomputed development/validation selection, live route explanations/features, selected-strategy rankings, same held-out IDs, per-query metrics, aggregate values and bootstrap intervals. Failed/interrupted runs retain explicit incomplete status and are not replayed as complete. Hash manifests detect changed files; they are reproducibility checks, not cryptographic signatures against an adversary who can rewrite every artifact.
+
+See README for installation, execution and replay commands, and experiment_results.md for actual scores and remaining limitations.

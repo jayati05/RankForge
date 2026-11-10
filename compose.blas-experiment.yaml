@@ -1,0 +1,5 @@
+# Explicit experiment only: never included by the default Compose command.
+services:
+  api:
+    environment:
+      OPENBLAS_NUM_THREADS: "${RANKFORGE_EXPERIMENT_BLAS_THREADS:?Set an explicit experimental thread count}"

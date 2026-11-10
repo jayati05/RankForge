@@ -1,0 +1,6 @@
+{"_id": "d1", "title": "Python packaging", "text": "Python virtual environments isolate package dependencies."}
+{"_id": "d2", "title": "Database error", "text": "ERR_42 indicates a database connection timeout."}
+{"_id": "d3", "title": "Lexical search", "text": "BM25 ranks documents with term frequency and inverse document frequency."}
+{"_id": "d4", "title": "Garden notes", "text": "Tomato plants need sunlight and water."}
+{"_id": "d5", "title": "C++ memory", "text": "C++ pointers support manual memory management."}
+{"_id": "d6", "title": "Caching", "text": "A cache stores frequently requested results."}

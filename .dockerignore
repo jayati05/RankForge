@@ -1,0 +1,24 @@
+# Allowlist: nothing outside these source/config paths enters the build context.
+**
+!Dockerfile
+!.dockerignore
+!pyproject.toml
+!app/
+!app/**/*.py
+!docker/
+!docker/*.py
+!docker/requirements.lock
+# Reassert exclusions after the allowlist.
+**/__pycache__/
+**/*.pyc
+.git/
+.venv/
+.pytest_cache/
+.ruff_cache/
+data/
+experiments/
+models/
+indexes/
+.env*
+**/*.tmp
+**/*.log

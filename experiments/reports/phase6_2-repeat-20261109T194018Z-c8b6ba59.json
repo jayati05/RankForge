@@ -1,0 +1,4021 @@
+{
+  "campaign": {
+    "campaign_id": "repeat-20261109T194018Z-c8b6ba59",
+    "status": "complete",
+    "smoke": false,
+    "runs": [
+      {
+        "label": "c1_r1",
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.api_soak",
+          "--native-profile",
+          "--clients",
+          "1",
+          "--duration",
+          "900",
+          "--stress-duration",
+          "0",
+          "--warmup",
+          "60",
+          "--idle",
+          "300",
+          "--sample-interval",
+          "1",
+          "--timeout",
+          "30",
+          "--seed",
+          "42",
+          "--window",
+          "120"
+        ],
+        "started_utc": "2026-11-09T19:40:18.355036+00:00",
+        "status": "complete",
+        "controller_pid": 32088,
+        "exit_code": 0,
+        "finished_utc": "2026-11-09T20:03:37.571927+00:00",
+        "artifact_directories": [
+          "experiments/results/phase6_2/phase6_2-20261109T194019Z-b88a5f0c0a71"
+        ]
+      },
+      {
+        "label": "c2_r1",
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.api_soak",
+          "--native-profile",
+          "--clients",
+          "2",
+          "--duration",
+          "900",
+          "--stress-duration",
+          "0",
+          "--warmup",
+          "60",
+          "--idle",
+          "300",
+          "--sample-interval",
+          "1",
+          "--timeout",
+          "30",
+          "--seed",
+          "42",
+          "--window",
+          "120"
+        ],
+        "started_utc": "2026-11-09T20:03:37.572947+00:00",
+        "status": "complete",
+        "controller_pid": 15680,
+        "exit_code": 0,
+        "finished_utc": "2026-11-09T20:26:31.469348+00:00",
+        "artifact_directories": [
+          "experiments/results/phase6_2/phase6_2-20261109T200338Z-a69b010b1c7c"
+        ]
+      },
+      {
+        "label": "c1_r2",
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.api_soak",
+          "--native-profile",
+          "--clients",
+          "1",
+          "--duration",
+          "900",
+          "--stress-duration",
+          "0",
+          "--warmup",
+          "60",
+          "--idle",
+          "300",
+          "--sample-interval",
+          "1",
+          "--timeout",
+          "30",
+          "--seed",
+          "42",
+          "--window",
+          "120"
+        ],
+        "started_utc": "2026-11-09T20:26:31.471875+00:00",
+        "status": "complete",
+        "controller_pid": 35408,
+        "exit_code": 0,
+        "finished_utc": "2026-11-09T20:49:26.769020+00:00",
+        "artifact_directories": [
+          "experiments/results/phase6_2/phase6_2-20261109T202632Z-0bce8e97e326"
+        ]
+      },
+      {
+        "label": "c2_r2",
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.api_soak",
+          "--native-profile",
+          "--clients",
+          "2",
+          "--duration",
+          "900",
+          "--stress-duration",
+          "0",
+          "--warmup",
+          "60",
+          "--idle",
+          "300",
+          "--sample-interval",
+          "1",
+          "--timeout",
+          "30",
+          "--seed",
+          "42",
+          "--window",
+          "120"
+        ],
+        "started_utc": "2026-11-09T20:49:26.770394+00:00",
+        "status": "complete",
+        "controller_pid": 33392,
+        "exit_code": 0,
+        "finished_utc": "2026-11-09T21:12:29.025227+00:00",
+        "artifact_directories": [
+          "experiments/results/phase6_2/phase6_2-20261109T204927Z-c5c4cebb9665"
+        ]
+      },
+      {
+        "label": "c4_stress",
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.api_soak",
+          "--native-profile",
+          "--clients",
+          "",
+          "--duration",
+          "900",
+          "--stress-duration",
+          "300",
+          "--warmup",
+          "60",
+          "--idle",
+          "300",
+          "--sample-interval",
+          "1",
+          "--timeout",
+          "30",
+          "--seed",
+          "42",
+          "--window",
+          "120"
+        ],
+        "started_utc": "2026-11-09T21:12:29.026632+00:00",
+        "status": "complete",
+        "controller_pid": 21024,
+        "exit_code": 0,
+        "finished_utc": "2026-11-09T21:25:37.665377+00:00",
+        "artifact_directories": [
+          "experiments/results/phase6_2/phase6_2-20261109T211230Z-a27135f1acf3"
+        ]
+      }
+    ],
+    "started_utc": "2026-11-09T19:40:18.354147+00:00",
+    "design": "Sequential independent serving processes; C1 twice/C2 twice/C4 once. Phase6.1 equal-five-method seeded200-request cycle and eight-query pool. C4 has stress rejection allowance, no admission-limit changes.",
+    "finished_utc": "2026-11-09T21:25:37.666380+00:00"
+  },
+  "status": "complete",
+  "runs": [
+    {
+      "run": "c1_r1",
+      "run_id": "phase6_2-20261109T194019Z-b88a5f0c0a71",
+      "serving_pid": 28688,
+      "config": {
+        "duration": 900.0,
+        "clients": "1",
+        "stress_duration": 0.0,
+        "idle": 300.0,
+        "warmup": 60.0,
+        "sample_interval": 1.0,
+        "timeout": 30.0,
+        "seed": 42,
+        "methods": "bm25:1,dense:1,hybrid:1,reranked:1,router:1",
+        "query_set": null,
+        "window": 120.0,
+        "rss_budget_mib": 2048,
+        "growth_budget": 2,
+        "rejection_budget": 0.05,
+        "stress_rejection_budget": 1,
+        "p95_budget_ms": 5000,
+        "trace": true,
+        "native_profile": true
+      },
+      "workload_sha256": "f65681d72fe114622aee328a1bb3ce23d98ed87eff77c4776251e774c704aa69",
+      "statistics": {
+        "requests": 1492,
+        "successful": 1492,
+        "failed": 0,
+        "timed_out": 0,
+        "statuses": {
+          "200": 1492
+        },
+        "elapsed_seconds": 902.139813200105,
+        "attempts_per_second": 1.6538456436231546,
+        "successful_per_second": 1.6538456436231546,
+        "all_latency": {
+          "mean_ms": 604.3828842479826,
+          "p50_ms": 123.13749990426004,
+          "p95_ms": 2779.2312102392316,
+          "p99_ms": 3465.001517822961
+        },
+        "success_latency": {
+          "mean_ms": 604.3828842479826,
+          "p50_ms": 123.13749990426004,
+          "p95_ms": 2779.2312102392316,
+          "p99_ms": 3465.001517822961
+        },
+        "by_method": {
+          "bm25": {
+            "requests": 304,
+            "successful": 304,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 304
+            },
+            "elapsed_seconds": 902.139813200105,
+            "attempts_per_second": 0.33697659226638,
+            "successful_per_second": 0.33697659226638,
+            "all_latency": {
+              "mean_ms": 61.907289790197915,
+              "p50_ms": 63.60554974526167,
+              "p95_ms": 84.80448988266289,
+              "p99_ms": 91.52633810881522
+            },
+            "success_latency": {
+              "mean_ms": 61.907289790197915,
+              "p50_ms": 63.60554974526167,
+              "p95_ms": 84.80448988266289,
+              "p99_ms": 91.52633810881522
+            }
+          },
+          "dense": {
+            "requests": 299,
+            "successful": 299,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 299
+            },
+            "elapsed_seconds": 902.139813200105,
+            "attempts_per_second": 0.331434214104104,
+            "successful_per_second": 0.331434214104104,
+            "all_latency": {
+              "mean_ms": 86.92200568950047,
+              "p50_ms": 90.990100055933,
+              "p95_ms": 110.23760018870216,
+              "p99_ms": 173.86271028779447
+            },
+            "success_latency": {
+              "mean_ms": 86.92200568950047,
+              "p50_ms": 90.990100055933,
+              "p95_ms": 110.23760018870216,
+              "p99_ms": 173.86271028779447
+            }
+          },
+          "hybrid": {
+            "requests": 296,
+            "successful": 296,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 296
+            },
+            "elapsed_seconds": 902.139813200105,
+            "attempts_per_second": 0.3281087872067384,
+            "successful_per_second": 0.3281087872067384,
+            "all_latency": {
+              "mean_ms": 138.16313815894662,
+              "p50_ms": 147.33569975942373,
+              "p95_ms": 176.63992522284389,
+              "p99_ms": 186.63009034935405
+            },
+            "success_latency": {
+              "mean_ms": 138.16313815894662,
+              "p50_ms": 147.33569975942373,
+              "p95_ms": 176.63992522284389,
+              "p99_ms": 186.63009034935405
+            }
+          },
+          "reranked": {
+            "requests": 299,
+            "successful": 299,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 299
+            },
+            "elapsed_seconds": 902.139813200105,
+            "attempts_per_second": 0.331434214104104,
+            "successful_per_second": 0.331434214104104,
+            "all_latency": {
+              "mean_ms": 2588.0595083725343,
+              "p50_ms": 2631.8001998588443,
+              "p95_ms": 3465.6017198227323,
+              "p99_ms": 4842.174684163177
+            },
+            "success_latency": {
+              "mean_ms": 2588.0595083725343,
+              "p50_ms": 2631.8001998588443,
+              "p95_ms": 3465.6017198227323,
+              "p99_ms": 4842.174684163177
+            }
+          },
+          "router": {
+            "requests": 294,
+            "successful": 294,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 294
+            },
+            "elapsed_seconds": 902.139813200105,
+            "attempts_per_second": 0.325891835941828,
+            "successful_per_second": 0.325891835941828,
+            "all_latency": {
+              "mean_ms": 143.54995102780003,
+              "p50_ms": 154.2837000451982,
+              "p95_ms": 180.68963515106586,
+              "p99_ms": 197.20236090943214
+            },
+            "success_latency": {
+              "mean_ms": 143.54995102780003,
+              "p50_ms": 154.2837000451982,
+              "p95_ms": 180.68963515106586,
+              "p99_ms": 197.20236090943214
+            }
+          }
+        },
+        "cancelled": 0,
+        "submission_duration_seconds": 900.0,
+        "drain_overrun_seconds": 2.1398132001049817,
+        "stage": "soak_1_c1",
+        "concurrency": 1,
+        "stress": false
+      },
+      "rejection_latency": {
+        "mean_ms": null,
+        "p50_ms": null,
+        "p95_ms": null,
+        "p99_ms": null
+      },
+      "budget_classification": "Failed",
+      "budgets": {
+        "checks": {
+          "rejection_rate": true,
+          "timeouts": true,
+          "cancellations": true,
+          "other_errors": true,
+          "p95_latency": true,
+          "rss_peak": true,
+          "late_memory_growth": false
+        },
+        "all_passed": false,
+        "indeterminate": false,
+        "rejection_rate": 0.0,
+        "other_errors": 0
+      },
+      "rss": {
+        "peak_mib": 1022.0625,
+        "end_mib": 989.87109375,
+        "whole_slope_mib_per_minute": 4.808737759948394,
+        "late_slope_mib_per_minute": 8.440047882241386,
+        "idle_start_mib": 985.59375,
+        "idle_end_mib": 985.59375,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "private_commit": {
+        "peak_mib": 2361.6875,
+        "end_mib": 2329.015625,
+        "whole_slope_mib_per_minute": 3.0322088464501062,
+        "late_slope_mib_per_minute": 8.237410991554993,
+        "idle_start_mib": 2337.0,
+        "idle_end_mib": 2337.0,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "overall_sampled_peak_rss_mib": 1022.0625,
+      "overall_sampled_peak_private_commit_mib": 2361.6875,
+      "os_lifetime_peak_rss_mib": 1022.0625,
+      "minimum_system_available_mib": 1745.58203125,
+      "max_checkpoint_native_threads": 72,
+      "sampling_scope": "RSS/private commit1s; native threads/virtual regions at stopped lifecycle checkpoints only. Missing continuous native sampler fields were detected; no invented or interpolated thread trace.",
+      "graceful_shutdown": "exit0; lifespan release/service-stop events checked",
+      "correctness_checks": 1661,
+      "sampler_errors": [],
+      "by_method": {
+        "bm25": {
+          "requests": 304,
+          "successful": 304,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 304
+          },
+          "elapsed_seconds": 902.139813200105,
+          "attempts_per_second": 0.33697659226638,
+          "successful_per_second": 0.33697659226638,
+          "all_latency": {
+            "mean_ms": 61.907289790197915,
+            "p50_ms": 63.60554974526167,
+            "p95_ms": 84.80448988266289,
+            "p99_ms": 91.52633810881522
+          },
+          "success_latency": {
+            "mean_ms": 61.907289790197915,
+            "p50_ms": 63.60554974526167,
+            "p95_ms": 84.80448988266289,
+            "p99_ms": 91.52633810881522
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "dense": {
+          "requests": 299,
+          "successful": 299,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 299
+          },
+          "elapsed_seconds": 902.139813200105,
+          "attempts_per_second": 0.331434214104104,
+          "successful_per_second": 0.331434214104104,
+          "all_latency": {
+            "mean_ms": 86.92200568950047,
+            "p50_ms": 90.990100055933,
+            "p95_ms": 110.23760018870216,
+            "p99_ms": 173.86271028779447
+          },
+          "success_latency": {
+            "mean_ms": 86.92200568950047,
+            "p50_ms": 90.990100055933,
+            "p95_ms": 110.23760018870216,
+            "p99_ms": 173.86271028779447
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "hybrid": {
+          "requests": 296,
+          "successful": 296,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 296
+          },
+          "elapsed_seconds": 902.139813200105,
+          "attempts_per_second": 0.3281087872067384,
+          "successful_per_second": 0.3281087872067384,
+          "all_latency": {
+            "mean_ms": 138.16313815894662,
+            "p50_ms": 147.33569975942373,
+            "p95_ms": 176.63992522284389,
+            "p99_ms": 186.63009034935405
+          },
+          "success_latency": {
+            "mean_ms": 138.16313815894662,
+            "p50_ms": 147.33569975942373,
+            "p95_ms": 176.63992522284389,
+            "p99_ms": 186.63009034935405
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "reranked": {
+          "requests": 299,
+          "successful": 299,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 299
+          },
+          "elapsed_seconds": 902.139813200105,
+          "attempts_per_second": 0.331434214104104,
+          "successful_per_second": 0.331434214104104,
+          "all_latency": {
+            "mean_ms": 2588.0595083725343,
+            "p50_ms": 2631.8001998588443,
+            "p95_ms": 3465.6017198227323,
+            "p99_ms": 4842.174684163177
+          },
+          "success_latency": {
+            "mean_ms": 2588.0595083725343,
+            "p50_ms": 2631.8001998588443,
+            "p95_ms": 3465.6017198227323,
+            "p99_ms": 4842.174684163177
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "router": {
+          "requests": 294,
+          "successful": 294,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 294
+          },
+          "elapsed_seconds": 902.139813200105,
+          "attempts_per_second": 0.325891835941828,
+          "successful_per_second": 0.325891835941828,
+          "all_latency": {
+            "mean_ms": 143.54995102780003,
+            "p50_ms": 154.2837000451982,
+            "p95_ms": 180.68963515106586,
+            "p99_ms": 197.20236090943214
+          },
+          "success_latency": {
+            "mean_ms": 143.54995102780003,
+            "p50_ms": 154.2837000451982,
+            "p95_ms": 180.68963515106586,
+            "p99_ms": 197.20236090943214
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        }
+      }
+    },
+    {
+      "run": "c2_r1",
+      "run_id": "phase6_2-20261109T200338Z-a69b010b1c7c",
+      "serving_pid": 35512,
+      "config": {
+        "duration": 900.0,
+        "clients": "2",
+        "stress_duration": 0.0,
+        "idle": 300.0,
+        "warmup": 60.0,
+        "sample_interval": 1.0,
+        "timeout": 30.0,
+        "seed": 42,
+        "methods": "bm25:1,dense:1,hybrid:1,reranked:1,router:1",
+        "query_set": null,
+        "window": 120.0,
+        "rss_budget_mib": 2048,
+        "growth_budget": 2,
+        "rejection_budget": 0.05,
+        "stress_rejection_budget": 1,
+        "p95_budget_ms": 5000,
+        "trace": true,
+        "native_profile": true
+      },
+      "workload_sha256": "f65681d72fe114622aee328a1bb3ce23d98ed87eff77c4776251e774c704aa69",
+      "statistics": {
+        "requests": 1924,
+        "successful": 1600,
+        "failed": 324,
+        "timed_out": 0,
+        "statuses": {
+          "200": 1600,
+          "429": 324
+        },
+        "elapsed_seconds": 900.2313866000623,
+        "attempts_per_second": 2.137228304454528,
+        "successful_per_second": 1.777320835305221,
+        "all_latency": {
+          "mean_ms": 935.550990809731,
+          "p50_ms": 244.08355029299855,
+          "p95_ms": 2649.1806047502905,
+          "p99_ms": 2957.888382067904
+        },
+        "success_latency": {
+          "mean_ms": 715.8157462600502,
+          "p50_ms": 214.3211499787867,
+          "p95_ms": 2703.566315048374,
+          "p99_ms": 2969.3499620677903
+        },
+        "by_method": {
+          "bm25": {
+            "requests": 387,
+            "successful": 317,
+            "failed": 70,
+            "timed_out": 0,
+            "statuses": {
+              "200": 317,
+              "429": 70
+            },
+            "elapsed_seconds": 900.2313866000623,
+            "attempts_per_second": 0.42988947703945035,
+            "successful_per_second": 0.35213169049484694,
+            "all_latency": {
+              "mean_ms": 518.0614193906233,
+              "p50_ms": 158.99879997596145,
+              "p95_ms": 2023.5448701772839,
+              "p99_ms": 2041.2619078345597
+            },
+            "success_latency": {
+              "mean_ms": 186.2266372304633,
+              "p50_ms": 145.79560002312064,
+              "p95_ms": 501.60945961251855,
+              "p99_ms": 578.2143400050699
+            }
+          },
+          "dense": {
+            "requests": 383,
+            "successful": 321,
+            "failed": 62,
+            "timed_out": 0,
+            "statuses": {
+              "200": 321,
+              "429": 62
+            },
+            "elapsed_seconds": 900.2313866000623,
+            "attempts_per_second": 0.4254461749511873,
+            "successful_per_second": 0.35657499258311,
+            "all_latency": {
+              "mean_ms": 524.642894264583,
+              "p50_ms": 180.36200013011694,
+              "p95_ms": 2022.3074101377279,
+              "p99_ms": 2028.6477980948985
+            },
+            "success_latency": {
+              "mean_ms": 235.99460063722694,
+              "p50_ms": 170.33870005980134,
+              "p95_ms": 552.7886999770999,
+              "p99_ms": 1961.380899883807
+            }
+          },
+          "hybrid": {
+            "requests": 383,
+            "successful": 317,
+            "failed": 66,
+            "timed_out": 0,
+            "statuses": {
+              "200": 317,
+              "429": 66
+            },
+            "elapsed_seconds": 900.2313866000623,
+            "attempts_per_second": 0.4254461749511873,
+            "successful_per_second": 0.35213169049484694,
+            "all_latency": {
+              "mean_ms": 535.9640091465538,
+              "p50_ms": 217.10290014743805,
+              "p95_ms": 2027.1458899602294,
+              "p99_ms": 2040.9754060581326
+            },
+            "success_latency": {
+              "mean_ms": 226.42147382838823,
+              "p50_ms": 206.81510027498007,
+              "p95_ms": 417.3066600225862,
+              "p99_ms": 590.8613757416605
+            }
+          },
+          "reranked": {
+            "requests": 386,
+            "successful": 330,
+            "failed": 56,
+            "timed_out": 0,
+            "statuses": {
+              "200": 330,
+              "429": 56
+            },
+            "elapsed_seconds": 900.2313866000623,
+            "attempts_per_second": 0.4287786515173846,
+            "successful_per_second": 0.36657242228170184,
+            "all_latency": {
+              "mean_ms": 2492.9533412105793,
+              "p50_ms": 2505.834000185132,
+              "p95_ms": 2957.744050072506,
+              "p99_ms": 3076.3249748852095
+            },
+            "success_latency": {
+              "mean_ms": 2573.1011660797803,
+              "p50_ms": 2536.527750082314,
+              "p95_ms": 2967.678080010228,
+              "p99_ms": 3095.3092550393185
+            }
+          },
+          "router": {
+            "requests": 385,
+            "successful": 315,
+            "failed": 70,
+            "timed_out": 0,
+            "statuses": {
+              "200": 315,
+              "429": 70
+            },
+            "elapsed_seconds": 900.2313866000623,
+            "attempts_per_second": 0.42766782599531883,
+            "successful_per_second": 0.3499100394507154,
+            "all_latency": {
+              "mean_ms": 600.0465020779278,
+              "p50_ms": 243.24290035292506,
+              "p95_ms": 2021.8535999767482,
+              "p99_ms": 2030.8298122696576
+            },
+            "success_latency": {
+              "mean_ms": 284.5018768239589,
+              "p50_ms": 226.63239995017648,
+              "p95_ms": 595.8390198647977,
+              "p99_ms": 700.6794879864908
+            }
+          }
+        },
+        "cancelled": 0,
+        "submission_duration_seconds": 900.0,
+        "drain_overrun_seconds": 0.2313866000622511,
+        "stage": "soak_1_c2",
+        "concurrency": 2,
+        "stress": false
+      },
+      "rejection_latency": {
+        "mean_ms": 2020.6633095735867,
+        "p50_ms": 2019.2323501687497,
+        "p95_ms": 2040.5533697688952,
+        "p99_ms": 2046.6943860705942
+      },
+      "budget_classification": "Failed",
+      "budgets": {
+        "checks": {
+          "rejection_rate": false,
+          "timeouts": true,
+          "cancellations": true,
+          "other_errors": true,
+          "p95_latency": true,
+          "rss_peak": true,
+          "late_memory_growth": false
+        },
+        "all_passed": false,
+        "indeterminate": false,
+        "rejection_rate": 0.1683991683991684,
+        "other_errors": 0
+      },
+      "rss": {
+        "peak_mib": 1071.62109375,
+        "end_mib": 1048.4140625,
+        "whole_slope_mib_per_minute": 5.866056000385081,
+        "late_slope_mib_per_minute": 4.036691602283988,
+        "idle_start_mib": 1039.9140625,
+        "idle_end_mib": 1039.9140625,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "private_commit": {
+        "peak_mib": 2450.53515625,
+        "end_mib": 2425.9375,
+        "whole_slope_mib_per_minute": 6.872432979628561,
+        "late_slope_mib_per_minute": 4.906997674330057,
+        "idle_start_mib": 2416.62109375,
+        "idle_end_mib": 2416.62109375,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "overall_sampled_peak_rss_mib": 1079.7421875,
+      "overall_sampled_peak_private_commit_mib": 2452.44921875,
+      "os_lifetime_peak_rss_mib": 1089.7421875,
+      "minimum_system_available_mib": 2324.97265625,
+      "max_checkpoint_native_threads": 75,
+      "sampling_scope": "RSS/private commit1s; native threads/virtual regions at stopped lifecycle checkpoints only. Missing continuous native sampler fields were detected; no invented or interpolated thread trace.",
+      "graceful_shutdown": "exit0; lifespan release/service-stop events checked",
+      "correctness_checks": 1791,
+      "sampler_errors": [],
+      "by_method": {
+        "bm25": {
+          "requests": 387,
+          "successful": 317,
+          "failed": 70,
+          "timed_out": 0,
+          "statuses": {
+            "200": 317,
+            "429": 70
+          },
+          "elapsed_seconds": 900.2313866000623,
+          "attempts_per_second": 0.42988947703945035,
+          "successful_per_second": 0.35213169049484694,
+          "all_latency": {
+            "mean_ms": 518.0614193906233,
+            "p50_ms": 158.99879997596145,
+            "p95_ms": 2023.5448701772839,
+            "p99_ms": 2041.2619078345597
+          },
+          "success_latency": {
+            "mean_ms": 186.2266372304633,
+            "p50_ms": 145.79560002312064,
+            "p95_ms": 501.60945961251855,
+            "p99_ms": 578.2143400050699
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.18087855297157623,
+          "rejection_latency": {
+            "mean_ms": 2020.7989328873477,
+            "p50_ms": 2018.4062998741865,
+            "p95_ms": 2042.2406600322574,
+            "p99_ms": 2046.316358083859
+          }
+        },
+        "dense": {
+          "requests": 383,
+          "successful": 321,
+          "failed": 62,
+          "timed_out": 0,
+          "statuses": {
+            "200": 321,
+            "429": 62
+          },
+          "elapsed_seconds": 900.2313866000623,
+          "attempts_per_second": 0.4254461749511873,
+          "successful_per_second": 0.35657499258311,
+          "all_latency": {
+            "mean_ms": 524.642894264583,
+            "p50_ms": 180.36200013011694,
+            "p95_ms": 2022.3074101377279,
+            "p99_ms": 2028.6477980948985
+          },
+          "success_latency": {
+            "mean_ms": 235.99460063722694,
+            "p50_ms": 170.33870005980134,
+            "p95_ms": 552.7886999770999,
+            "p99_ms": 1961.380899883807
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.1618798955613577,
+          "rejection_latency": {
+            "mean_ms": 2019.096156432023,
+            "p50_ms": 2019.3209499120712,
+            "p95_ms": 2028.1136004254222,
+            "p99_ms": 2033.0702788429335
+          }
+        },
+        "hybrid": {
+          "requests": 383,
+          "successful": 317,
+          "failed": 66,
+          "timed_out": 0,
+          "statuses": {
+            "200": 317,
+            "429": 66
+          },
+          "elapsed_seconds": 900.2313866000623,
+          "attempts_per_second": 0.4254461749511873,
+          "successful_per_second": 0.35213169049484694,
+          "all_latency": {
+            "mean_ms": 535.9640091465538,
+            "p50_ms": 217.10290014743805,
+            "p95_ms": 2027.1458899602294,
+            "p99_ms": 2040.9754060581326
+          },
+          "success_latency": {
+            "mean_ms": 226.42147382838823,
+            "p50_ms": 206.81510027498007,
+            "p95_ms": 417.3066600225862,
+            "p99_ms": 590.8613757416605
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.17232375979112272,
+          "rejection_latency": {
+            "mean_ms": 2022.706186356531,
+            "p50_ms": 2019.9670498259366,
+            "p95_ms": 2041.036224924028,
+            "p99_ms": 2043.6762849800289
+          }
+        },
+        "reranked": {
+          "requests": 386,
+          "successful": 330,
+          "failed": 56,
+          "timed_out": 0,
+          "statuses": {
+            "200": 330,
+            "429": 56
+          },
+          "elapsed_seconds": 900.2313866000623,
+          "attempts_per_second": 0.4287786515173846,
+          "successful_per_second": 0.36657242228170184,
+          "all_latency": {
+            "mean_ms": 2492.9533412105793,
+            "p50_ms": 2505.834000185132,
+            "p95_ms": 2957.744050072506,
+            "p99_ms": 3076.3249748852095
+          },
+          "success_latency": {
+            "mean_ms": 2573.1011660797803,
+            "p50_ms": 2536.527750082314,
+            "p95_ms": 2967.678080010228,
+            "p99_ms": 3095.3092550393185
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.14507772020725387,
+          "rejection_latency": {
+            "mean_ms": 2020.6536589456457,
+            "p50_ms": 2018.0699001066387,
+            "p95_ms": 2041.4304750738665,
+            "p99_ms": 2048.934099962935
+          }
+        },
+        "router": {
+          "requests": 385,
+          "successful": 315,
+          "failed": 70,
+          "timed_out": 0,
+          "statuses": {
+            "200": 315,
+            "429": 70
+          },
+          "elapsed_seconds": 900.2313866000623,
+          "attempts_per_second": 0.42766782599531883,
+          "successful_per_second": 0.3499100394507154,
+          "all_latency": {
+            "mean_ms": 600.0465020779278,
+            "p50_ms": 243.24290035292506,
+            "p95_ms": 2021.8535999767482,
+            "p99_ms": 2030.8298122696576
+          },
+          "success_latency": {
+            "mean_ms": 284.5018768239589,
+            "p50_ms": 226.63239995017648,
+            "p95_ms": 595.8390198647977,
+            "p99_ms": 700.6794879864908
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.18181818181818182,
+          "rejection_latency": {
+            "mean_ms": 2019.997315720788,
+            "p50_ms": 2019.9297999497503,
+            "p95_ms": 2032.276985165663,
+            "p99_ms": 2050.964037179947
+          }
+        }
+      }
+    },
+    {
+      "run": "c1_r2",
+      "run_id": "phase6_2-20261109T202632Z-0bce8e97e326",
+      "serving_pid": 19864,
+      "config": {
+        "duration": 900.0,
+        "clients": "1",
+        "stress_duration": 0.0,
+        "idle": 300.0,
+        "warmup": 60.0,
+        "sample_interval": 1.0,
+        "timeout": 30.0,
+        "seed": 42,
+        "methods": "bm25:1,dense:1,hybrid:1,reranked:1,router:1",
+        "query_set": null,
+        "window": 120.0,
+        "rss_budget_mib": 2048,
+        "growth_budget": 2,
+        "rejection_budget": 0.05,
+        "stress_rejection_budget": 1,
+        "p95_budget_ms": 5000,
+        "trace": true,
+        "native_profile": true
+      },
+      "workload_sha256": "f65681d72fe114622aee328a1bb3ce23d98ed87eff77c4776251e774c704aa69",
+      "statistics": {
+        "requests": 1711,
+        "successful": 1711,
+        "failed": 0,
+        "timed_out": 0,
+        "statuses": {
+          "200": 1711
+        },
+        "elapsed_seconds": 901.1251618000679,
+        "attempts_per_second": 1.898737348075093,
+        "successful_per_second": 1.898737348075093,
+        "all_latency": {
+          "mean_ms": 526.4494234890896,
+          "p50_ms": 119.99019980430603,
+          "p95_ms": 2521.152399946004,
+          "p99_ms": 2641.322769923136
+        },
+        "success_latency": {
+          "mean_ms": 526.4494234890896,
+          "p50_ms": 119.99019980430603,
+          "p95_ms": 2521.152399946004,
+          "p99_ms": 2641.322769923136
+        },
+        "by_method": {
+          "bm25": {
+            "requests": 346,
+            "successful": 346,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 346
+            },
+            "elapsed_seconds": 901.1251618000679,
+            "attempts_per_second": 0.3839644198912812,
+            "successful_per_second": 0.3839644198912812,
+            "all_latency": {
+              "mean_ms": 56.74356503433661,
+              "p50_ms": 53.799400106072426,
+              "p95_ms": 96.56257519964129,
+              "p99_ms": 121.63926498033108
+            },
+            "success_latency": {
+              "mean_ms": 56.74356503433661,
+              "p50_ms": 53.799400106072426,
+              "p95_ms": 96.56257519964129,
+              "p99_ms": 121.63926498033108
+            }
+          },
+          "dense": {
+            "requests": 341,
+            "successful": 341,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 341
+            },
+            "elapsed_seconds": 901.1251618000679,
+            "attempts_per_second": 0.3784158011067251,
+            "successful_per_second": 0.3784158011067251,
+            "all_latency": {
+              "mean_ms": 85.13418621932568,
+              "p50_ms": 87.61380007490516,
+              "p95_ms": 150.30530001968145,
+              "p99_ms": 172.6613399572671
+            },
+            "success_latency": {
+              "mean_ms": 85.13418621932568,
+              "p50_ms": 87.61380007490516,
+              "p95_ms": 150.30530001968145,
+              "p99_ms": 172.6613399572671
+            }
+          },
+          "hybrid": {
+            "requests": 339,
+            "successful": 339,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 339
+            },
+            "elapsed_seconds": 901.1251618000679,
+            "attempts_per_second": 0.3761963535929027,
+            "successful_per_second": 0.3761963535929027,
+            "all_latency": {
+              "mean_ms": 140.52327108434827,
+              "p50_ms": 146.19130035862327,
+              "p95_ms": 234.22384993173173,
+              "p99_ms": 266.88723598606884
+            },
+            "success_latency": {
+              "mean_ms": 140.52327108434827,
+              "p50_ms": 146.19130035862327,
+              "p95_ms": 234.22384993173173,
+              "p99_ms": 266.88723598606884
+            }
+          },
+          "reranked": {
+            "requests": 344,
+            "successful": 344,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 344
+            },
+            "elapsed_seconds": 901.1251618000679,
+            "attempts_per_second": 0.3817449723774588,
+            "successful_per_second": 0.3817449723774588,
+            "all_latency": {
+              "mean_ms": 2196.29705900348,
+              "p50_ms": 2420.121599920094,
+              "p95_ms": 2641.164004919119,
+              "p99_ms": 2760.3472051071003
+            },
+            "success_latency": {
+              "mean_ms": 2196.29705900348,
+              "p50_ms": 2420.121599920094,
+              "p95_ms": 2641.164004919119,
+              "p99_ms": 2760.3472051071003
+            }
+          },
+          "router": {
+            "requests": 341,
+            "successful": 341,
+            "failed": 0,
+            "timed_out": 0,
+            "statuses": {
+              "200": 341
+            },
+            "elapsed_seconds": 901.1251618000679,
+            "attempts_per_second": 0.3784158011067251,
+            "successful_per_second": 0.3784158011067251,
+            "all_latency": {
+              "mean_ms": 143.481980622787,
+              "p50_ms": 145.32369980588555,
+              "p95_ms": 233.54149982333183,
+              "p99_ms": 276.142300013453
+            },
+            "success_latency": {
+              "mean_ms": 143.481980622787,
+              "p50_ms": 145.32369980588555,
+              "p95_ms": 233.54149982333183,
+              "p99_ms": 276.142300013453
+            }
+          }
+        },
+        "cancelled": 0,
+        "submission_duration_seconds": 900.0,
+        "drain_overrun_seconds": 1.1251618000678718,
+        "stage": "soak_1_c1",
+        "concurrency": 1,
+        "stress": false
+      },
+      "rejection_latency": {
+        "mean_ms": null,
+        "p50_ms": null,
+        "p95_ms": null,
+        "p99_ms": null
+      },
+      "budget_classification": "Failed",
+      "budgets": {
+        "checks": {
+          "rejection_rate": true,
+          "timeouts": true,
+          "cancellations": true,
+          "other_errors": true,
+          "p95_latency": true,
+          "rss_peak": true,
+          "late_memory_growth": false
+        },
+        "all_passed": false,
+        "indeterminate": false,
+        "rejection_rate": 0.0,
+        "other_errors": 0
+      },
+      "rss": {
+        "peak_mib": 1023.6796875,
+        "end_mib": 989.1953125,
+        "whole_slope_mib_per_minute": 4.109919842962932,
+        "late_slope_mib_per_minute": 4.260986650371075,
+        "idle_start_mib": 995.12890625,
+        "idle_end_mib": 995.125,
+        "idle_only_delta_mib": -0.00390625,
+        "late_trend_sufficient_duration": true
+      },
+      "private_commit": {
+        "peak_mib": 2362.16796875,
+        "end_mib": 2350.0234375,
+        "whole_slope_mib_per_minute": 2.6601143152703095,
+        "late_slope_mib_per_minute": 2.113988219667517,
+        "idle_start_mib": 2338.61328125,
+        "idle_end_mib": 2338.61328125,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "overall_sampled_peak_rss_mib": 1028.13671875,
+      "overall_sampled_peak_private_commit_mib": 2362.27734375,
+      "os_lifetime_peak_rss_mib": 1030.51171875,
+      "minimum_system_available_mib": 2779.6875,
+      "max_checkpoint_native_threads": 72,
+      "sampling_scope": "RSS/private commit1s; native threads/virtual regions at stopped lifecycle checkpoints only. Missing continuous native sampler fields were detected; no invented or interpolated thread trace.",
+      "graceful_shutdown": "exit0; lifespan release/service-stop events checked",
+      "correctness_checks": 1902,
+      "sampler_errors": [],
+      "by_method": {
+        "bm25": {
+          "requests": 346,
+          "successful": 346,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 346
+          },
+          "elapsed_seconds": 901.1251618000679,
+          "attempts_per_second": 0.3839644198912812,
+          "successful_per_second": 0.3839644198912812,
+          "all_latency": {
+            "mean_ms": 56.74356503433661,
+            "p50_ms": 53.799400106072426,
+            "p95_ms": 96.56257519964129,
+            "p99_ms": 121.63926498033108
+          },
+          "success_latency": {
+            "mean_ms": 56.74356503433661,
+            "p50_ms": 53.799400106072426,
+            "p95_ms": 96.56257519964129,
+            "p99_ms": 121.63926498033108
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "dense": {
+          "requests": 341,
+          "successful": 341,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 341
+          },
+          "elapsed_seconds": 901.1251618000679,
+          "attempts_per_second": 0.3784158011067251,
+          "successful_per_second": 0.3784158011067251,
+          "all_latency": {
+            "mean_ms": 85.13418621932568,
+            "p50_ms": 87.61380007490516,
+            "p95_ms": 150.30530001968145,
+            "p99_ms": 172.6613399572671
+          },
+          "success_latency": {
+            "mean_ms": 85.13418621932568,
+            "p50_ms": 87.61380007490516,
+            "p95_ms": 150.30530001968145,
+            "p99_ms": 172.6613399572671
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "hybrid": {
+          "requests": 339,
+          "successful": 339,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 339
+          },
+          "elapsed_seconds": 901.1251618000679,
+          "attempts_per_second": 0.3761963535929027,
+          "successful_per_second": 0.3761963535929027,
+          "all_latency": {
+            "mean_ms": 140.52327108434827,
+            "p50_ms": 146.19130035862327,
+            "p95_ms": 234.22384993173173,
+            "p99_ms": 266.88723598606884
+          },
+          "success_latency": {
+            "mean_ms": 140.52327108434827,
+            "p50_ms": 146.19130035862327,
+            "p95_ms": 234.22384993173173,
+            "p99_ms": 266.88723598606884
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "reranked": {
+          "requests": 344,
+          "successful": 344,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 344
+          },
+          "elapsed_seconds": 901.1251618000679,
+          "attempts_per_second": 0.3817449723774588,
+          "successful_per_second": 0.3817449723774588,
+          "all_latency": {
+            "mean_ms": 2196.29705900348,
+            "p50_ms": 2420.121599920094,
+            "p95_ms": 2641.164004919119,
+            "p99_ms": 2760.3472051071003
+          },
+          "success_latency": {
+            "mean_ms": 2196.29705900348,
+            "p50_ms": 2420.121599920094,
+            "p95_ms": 2641.164004919119,
+            "p99_ms": 2760.3472051071003
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        },
+        "router": {
+          "requests": 341,
+          "successful": 341,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 341
+          },
+          "elapsed_seconds": 901.1251618000679,
+          "attempts_per_second": 0.3784158011067251,
+          "successful_per_second": 0.3784158011067251,
+          "all_latency": {
+            "mean_ms": 143.481980622787,
+            "p50_ms": 145.32369980588555,
+            "p95_ms": 233.54149982333183,
+            "p99_ms": 276.142300013453
+          },
+          "success_latency": {
+            "mean_ms": 143.481980622787,
+            "p50_ms": 145.32369980588555,
+            "p95_ms": 233.54149982333183,
+            "p99_ms": 276.142300013453
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.0,
+          "rejection_latency": {
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null
+          }
+        }
+      }
+    },
+    {
+      "run": "c2_r2",
+      "run_id": "phase6_2-20261109T204927Z-c5c4cebb9665",
+      "serving_pid": 38728,
+      "config": {
+        "duration": 900.0,
+        "clients": "2",
+        "stress_duration": 0.0,
+        "idle": 300.0,
+        "warmup": 60.0,
+        "sample_interval": 1.0,
+        "timeout": 30.0,
+        "seed": 42,
+        "methods": "bm25:1,dense:1,hybrid:1,reranked:1,router:1",
+        "query_set": null,
+        "window": 120.0,
+        "rss_budget_mib": 2048,
+        "growth_budget": 2,
+        "rejection_budget": 0.05,
+        "stress_rejection_budget": 1,
+        "p95_budget_ms": 5000,
+        "trace": true,
+        "native_profile": true
+      },
+      "workload_sha256": "f65681d72fe114622aee328a1bb3ce23d98ed87eff77c4776251e774c704aa69",
+      "statistics": {
+        "requests": 1693,
+        "successful": 1399,
+        "failed": 294,
+        "timed_out": 0,
+        "statuses": {
+          "200": 1399,
+          "429": 294
+        },
+        "elapsed_seconds": 903.2170068998821,
+        "attempts_per_second": 1.8744111183323435,
+        "successful_per_second": 1.5489079471629938,
+        "all_latency": {
+          "mean_ms": 1065.0854424680201,
+          "p50_ms": 346.4327999390662,
+          "p95_ms": 3023.319880105555,
+          "p99_ms": 3898.8508360832907
+        },
+        "success_latency": {
+          "mean_ms": 861.5856744832305,
+          "p50_ms": 296.25550005584955,
+          "p95_ms": 3131.705849803984,
+          "p99_ms": 4020.1535598561163
+        },
+        "by_method": {
+          "bm25": {
+            "requests": 344,
+            "successful": 285,
+            "failed": 59,
+            "timed_out": 0,
+            "statuses": {
+              "200": 285,
+              "429": 59
+            },
+            "elapsed_seconds": 903.2170068998821,
+            "attempts_per_second": 0.3808608533410078,
+            "successful_per_second": 0.31553878837845123,
+            "all_latency": {
+              "mean_ms": 592.0598491211422,
+              "p50_ms": 226.40959988348186,
+              "p95_ms": 2046.644500060938,
+              "p99_ms": 2073.3608180237934
+            },
+            "success_latency": {
+              "mean_ms": 293.055168420011,
+              "p50_ms": 199.63070005178452,
+              "p95_ms": 883.3427200093869,
+              "p99_ms": 1480.7519241981283
+            }
+          },
+          "dense": {
+            "requests": 339,
+            "successful": 278,
+            "failed": 61,
+            "timed_out": 0,
+            "statuses": {
+              "200": 278,
+              "429": 61
+            },
+            "elapsed_seconds": 903.2170068998821,
+            "attempts_per_second": 0.37532508512384194,
+            "successful_per_second": 0.30778871287441906,
+            "all_latency": {
+              "mean_ms": 604.0009236042896,
+              "p50_ms": 254.00450034067035,
+              "p95_ms": 2030.6478898506612,
+              "p99_ms": 2052.762734051794
+            },
+            "success_latency": {
+              "mean_ms": 291.43009604651667,
+              "p50_ms": 233.02825004793704,
+              "p95_ms": 735.8752600848671,
+              "p99_ms": 1036.9865970220449
+            }
+          },
+          "hybrid": {
+            "requests": 336,
+            "successful": 277,
+            "failed": 59,
+            "timed_out": 0,
+            "statuses": {
+              "200": 277,
+              "429": 59
+            },
+            "elapsed_seconds": 903.2170068998821,
+            "attempts_per_second": 0.3720036241935425,
+            "successful_per_second": 0.3066815592309859,
+            "all_latency": {
+              "mean_ms": 624.8526026735947,
+              "p50_ms": 309.33295004069805,
+              "p95_ms": 2044.1079752054065,
+              "p99_ms": 2077.498145052232
+            },
+            "success_latency": {
+              "mean_ms": 323.83387328028033,
+              "p50_ms": 287.0311001315713,
+              "p95_ms": 617.6955998875198,
+              "p99_ms": 1130.454523935917
+            }
+          },
+          "reranked": {
+            "requests": 340,
+            "successful": 285,
+            "failed": 55,
+            "timed_out": 0,
+            "statuses": {
+              "200": 285,
+              "429": 55
+            },
+            "elapsed_seconds": 903.2170068998821,
+            "attempts_per_second": 0.3764322387672751,
+            "successful_per_second": 0.31553878837845123,
+            "all_latency": {
+              "mean_ms": 2810.759374706129,
+              "p50_ms": 2700.946049997583,
+              "p95_ms": 3897.9659350821753,
+              "p99_ms": 5239.131156145595
+            },
+            "success_latency": {
+              "mean_ms": 2960.8871049198665,
+              "p50_ms": 2805.4548003710806,
+              "p95_ms": 4003.200419899077,
+              "p99_ms": 5382.918888013831
+            }
+          },
+          "router": {
+            "requests": 334,
+            "successful": 274,
+            "failed": 60,
+            "timed_out": 0,
+            "statuses": {
+              "200": 274,
+              "429": 60
+            },
+            "elapsed_seconds": 903.2170068998821,
+            "attempts_per_second": 0.36978931690667616,
+            "successful_per_second": 0.30336009830068644,
+            "all_latency": {
+              "mean_ms": 686.0960808395781,
+              "p50_ms": 340.69469990208745,
+              "p95_ms": 2032.346450095065,
+              "p99_ms": 2067.8104841709137
+            },
+            "success_latency": {
+              "mean_ms": 391.47905511169756,
+              "p50_ms": 321.43200002610683,
+              "p95_ms": 851.5657100593669,
+              "p99_ms": 1152.355848946608
+            }
+          }
+        },
+        "cancelled": 0,
+        "submission_duration_seconds": 900.0,
+        "drain_overrun_seconds": 3.217006899882108,
+        "stage": "soak_1_c2",
+        "concurrency": 2,
+        "stress": false
+      },
+      "rejection_latency": {
+        "mean_ms": 2033.4397805997228,
+        "p50_ms": 2026.4183001127094,
+        "p95_ms": 2074.396980111487,
+        "p99_ms": 2116.6781190410256
+      },
+      "budget_classification": "Failed",
+      "budgets": {
+        "checks": {
+          "rejection_rate": false,
+          "timeouts": true,
+          "cancellations": true,
+          "other_errors": true,
+          "p95_latency": true,
+          "rss_peak": true,
+          "late_memory_growth": false
+        },
+        "all_passed": false,
+        "indeterminate": false,
+        "rejection_rate": 0.17365623154164206,
+        "other_errors": 0
+      },
+      "rss": {
+        "peak_mib": 1054.16796875,
+        "end_mib": 1029.484375,
+        "whole_slope_mib_per_minute": 2.6987049037521955,
+        "late_slope_mib_per_minute": 7.45347239210635,
+        "idle_start_mib": 1012.47265625,
+        "idle_end_mib": 1012.47265625,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "private_commit": {
+        "peak_mib": 2422.6484375,
+        "end_mib": 2402.12109375,
+        "whole_slope_mib_per_minute": 3.81519053325968,
+        "late_slope_mib_per_minute": 0.8327562757668693,
+        "idle_start_mib": 2384.5390625,
+        "idle_end_mib": 2384.5390625,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "overall_sampled_peak_rss_mib": 1054.16796875,
+      "overall_sampled_peak_private_commit_mib": 2422.7578125,
+      "os_lifetime_peak_rss_mib": 1055.234375,
+      "minimum_system_available_mib": 2696.90625,
+      "max_checkpoint_native_threads": 75,
+      "sampling_scope": "RSS/private commit1s; native threads/virtual regions at stopped lifecycle checkpoints only. Missing continuous native sampler fields were detected; no invented or interpolated thread trace.",
+      "graceful_shutdown": "exit0; lifespan release/service-stop events checked",
+      "correctness_checks": 1588,
+      "sampler_errors": [],
+      "by_method": {
+        "bm25": {
+          "requests": 344,
+          "successful": 285,
+          "failed": 59,
+          "timed_out": 0,
+          "statuses": {
+            "200": 285,
+            "429": 59
+          },
+          "elapsed_seconds": 903.2170068998821,
+          "attempts_per_second": 0.3808608533410078,
+          "successful_per_second": 0.31553878837845123,
+          "all_latency": {
+            "mean_ms": 592.0598491211422,
+            "p50_ms": 226.40959988348186,
+            "p95_ms": 2046.644500060938,
+            "p99_ms": 2073.3608180237934
+          },
+          "success_latency": {
+            "mean_ms": 293.055168420011,
+            "p50_ms": 199.63070005178452,
+            "p95_ms": 883.3427200093869,
+            "p99_ms": 1480.7519241981283
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.17151162790697674,
+          "rejection_latency": {
+            "mean_ms": 2036.4044931859282,
+            "p50_ms": 2024.7356998734176,
+            "p95_ms": 2075.3036902286112,
+            "p99_ms": 2125.9095398243517
+          }
+        },
+        "dense": {
+          "requests": 339,
+          "successful": 278,
+          "failed": 61,
+          "timed_out": 0,
+          "statuses": {
+            "200": 278,
+            "429": 61
+          },
+          "elapsed_seconds": 903.2170068998821,
+          "attempts_per_second": 0.37532508512384194,
+          "successful_per_second": 0.30778871287441906,
+          "all_latency": {
+            "mean_ms": 604.0009236042896,
+            "p50_ms": 254.00450034067035,
+            "p95_ms": 2030.6478898506612,
+            "p99_ms": 2052.762734051794
+          },
+          "success_latency": {
+            "mean_ms": 291.43009604651667,
+            "p50_ms": 233.02825004793704,
+            "p95_ms": 735.8752600848671,
+            "p99_ms": 1036.9865970220449
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.17994100294985252,
+          "rejection_latency": {
+            "mean_ms": 2028.5040393593858,
+            "p50_ms": 2023.3217999339104,
+            "p95_ms": 2053.8687999360263,
+            "p99_ms": 2099.302440136671
+          }
+        },
+        "hybrid": {
+          "requests": 336,
+          "successful": 277,
+          "failed": 59,
+          "timed_out": 0,
+          "statuses": {
+            "200": 277,
+            "429": 59
+          },
+          "elapsed_seconds": 903.2170068998821,
+          "attempts_per_second": 0.3720036241935425,
+          "successful_per_second": 0.3066815592309859,
+          "all_latency": {
+            "mean_ms": 624.8526026735947,
+            "p50_ms": 309.33295004069805,
+            "p95_ms": 2044.1079752054065,
+            "p99_ms": 2077.498145052232
+          },
+          "success_latency": {
+            "mean_ms": 323.83387328028033,
+            "p50_ms": 287.0311001315713,
+            "p95_ms": 617.6955998875198,
+            "p99_ms": 1130.454523935917
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.17559523809523808,
+          "rejection_latency": {
+            "mean_ms": 2038.1100271133928,
+            "p50_ms": 2027.5317998602986,
+            "p95_ms": 2077.900469955057,
+            "p99_ms": 2117.4476459249854
+          }
+        },
+        "reranked": {
+          "requests": 340,
+          "successful": 285,
+          "failed": 55,
+          "timed_out": 0,
+          "statuses": {
+            "200": 285,
+            "429": 55
+          },
+          "elapsed_seconds": 903.2170068998821,
+          "attempts_per_second": 0.3764322387672751,
+          "successful_per_second": 0.31553878837845123,
+          "all_latency": {
+            "mean_ms": 2810.759374706129,
+            "p50_ms": 2700.946049997583,
+            "p95_ms": 3897.9659350821753,
+            "p99_ms": 5239.131156145595
+          },
+          "success_latency": {
+            "mean_ms": 2960.8871049198665,
+            "p50_ms": 2805.4548003710806,
+            "p95_ms": 4003.200419899077,
+            "p99_ms": 5382.918888013831
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.16176470588235295,
+          "rejection_latency": {
+            "mean_ms": 2032.8247726894915,
+            "p50_ms": 2025.5601997487247,
+            "p95_ms": 2066.4936198387295,
+            "p99_ms": 2092.08364806138
+          }
+        },
+        "router": {
+          "requests": 334,
+          "successful": 274,
+          "failed": 60,
+          "timed_out": 0,
+          "statuses": {
+            "200": 274,
+            "429": 60
+          },
+          "elapsed_seconds": 903.2170068998821,
+          "attempts_per_second": 0.36978931690667616,
+          "successful_per_second": 0.30336009830068644,
+          "all_latency": {
+            "mean_ms": 686.0960808395781,
+            "p50_ms": 340.69469990208745,
+            "p95_ms": 2032.346450095065,
+            "p99_ms": 2067.8104841709137
+          },
+          "success_latency": {
+            "mean_ms": 391.47905511169756,
+            "p50_ms": 321.43200002610683,
+            "p95_ms": 851.5657100593669,
+            "p99_ms": 1152.355848946608
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.17964071856287425,
+          "rejection_latency": {
+            "mean_ms": 2031.5138316635664,
+            "p50_ms": 2027.123450068757,
+            "p95_ms": 2069.6110253222287,
+            "p99_ms": 2093.7805919907987
+          }
+        }
+      }
+    },
+    {
+      "run": "c4_stress",
+      "run_id": "phase6_2-20261109T211230Z-a27135f1acf3",
+      "serving_pid": 7616,
+      "config": {
+        "duration": 900.0,
+        "clients": "",
+        "stress_duration": 300.0,
+        "idle": 300.0,
+        "warmup": 60.0,
+        "sample_interval": 1.0,
+        "timeout": 30.0,
+        "seed": 42,
+        "methods": "bm25:1,dense:1,hybrid:1,reranked:1,router:1",
+        "query_set": null,
+        "window": 120.0,
+        "rss_budget_mib": 2048,
+        "growth_budget": 2,
+        "rejection_budget": 0.05,
+        "stress_rejection_budget": 1,
+        "p95_budget_ms": 5000,
+        "trace": true,
+        "native_profile": true
+      },
+      "workload_sha256": "f65681d72fe114622aee328a1bb3ce23d98ed87eff77c4776251e774c704aa69",
+      "statistics": {
+        "requests": 23323,
+        "successful": 303,
+        "failed": 23020,
+        "timed_out": 0,
+        "statuses": {
+          "429": 23020,
+          "200": 303
+        },
+        "elapsed_seconds": 301.21104020019993,
+        "attempts_per_second": 77.4307607865182,
+        "successful_per_second": 1.005939223869786,
+        "all_latency": {
+          "mean_ms": 51.40219954240698,
+          "p50_ms": 8.599100168794394,
+          "p95_ms": 53.559549897909164,
+          "p99_ms": 2027.8888920042664
+        },
+        "success_latency": {
+          "mean_ms": 1703.0895514930091,
+          "p50_ms": 734.0112999081612,
+          "p95_ms": 5551.193159911779,
+          "p99_ms": 6391.772054191679
+        },
+        "by_method": {
+          "bm25": {
+            "requests": 4667,
+            "successful": 63,
+            "failed": 4604,
+            "timed_out": 0,
+            "statuses": {
+              "429": 4604,
+              "200": 63
+            },
+            "elapsed_seconds": 301.21104020019993,
+            "attempts_per_second": 15.494119992740234,
+            "successful_per_second": 0.20915568021054953,
+            "all_latency": {
+              "mean_ms": 37.44667973191756,
+              "p50_ms": 8.620200213044882,
+              "p95_ms": 49.53175005502997,
+              "p99_ms": 900.6407521572022
+            },
+            "success_latency": {
+              "mean_ms": 769.6960873547055,
+              "p50_ms": 570.5781001597643,
+              "p95_ms": 1916.3626298774034,
+              "p99_ms": 2063.143523987383
+            }
+          },
+          "dense": {
+            "requests": 4663,
+            "successful": 66,
+            "failed": 4597,
+            "timed_out": 0,
+            "statuses": {
+              "429": 4597,
+              "200": 66
+            },
+            "elapsed_seconds": 301.21104020019993,
+            "attempts_per_second": 15.48084026701258,
+            "successful_per_second": 0.21911547450629,
+            "all_latency": {
+              "mean_ms": 44.397822133945105,
+              "p50_ms": 8.566000033169985,
+              "p95_ms": 62.26100004278123,
+              "p99_ms": 2018.3246317226442
+            },
+            "success_latency": {
+              "mean_ms": 805.953303034502,
+              "p50_ms": 612.5793000683188,
+              "p95_ms": 2001.8933499231935,
+              "p99_ms": 2163.772765337489
+            }
+          },
+          "hybrid": {
+            "requests": 4662,
+            "successful": 57,
+            "failed": 4605,
+            "timed_out": 0,
+            "statuses": {
+              "429": 4605,
+              "200": 57
+            },
+            "elapsed_seconds": 301.21104020019993,
+            "attempts_per_second": 15.477520335580666,
+            "successful_per_second": 0.18923609161906862,
+            "all_latency": {
+              "mean_ms": 40.24160860193448,
+              "p50_ms": 8.583599934354424,
+              "p95_ms": 48.013289785012574,
+              "p99_ms": 1778.6715360544722
+            },
+            "success_latency": {
+              "mean_ms": 1057.744142125573,
+              "p50_ms": 766.4388003759086,
+              "p95_ms": 2152.556160278618,
+              "p99_ms": 2279.8241880908604
+            }
+          },
+          "reranked": {
+            "requests": 4666,
+            "successful": 61,
+            "failed": 4605,
+            "timed_out": 0,
+            "statuses": {
+              "429": 4605,
+              "200": 61
+            },
+            "elapsed_seconds": 301.21104020019993,
+            "attempts_per_second": 15.49080006130832,
+            "successful_per_second": 0.20251581734672258,
+            "all_latency": {
+              "mean_ms": 93.72706026353015,
+              "p50_ms": 8.574800100177526,
+              "p95_ms": 57.12259979918599,
+              "p99_ms": 4043.0427802028153
+            },
+            "success_latency": {
+              "mean_ms": 4874.5079032664535,
+              "p50_ms": 4666.390200145543,
+              "p95_ms": 6392.179800197482,
+              "p99_ms": 7363.799279741942
+            }
+          },
+          "router": {
+            "requests": 4665,
+            "successful": 56,
+            "failed": 4609,
+            "timed_out": 0,
+            "statuses": {
+              "429": 4609,
+              "200": 56
+            },
+            "elapsed_seconds": 301.21104020019993,
+            "attempts_per_second": 15.487480129876406,
+            "successful_per_second": 0.18591616018715515,
+            "all_latency": {
+              "mean_ms": 41.18455702385047,
+              "p50_ms": 8.642199914902449,
+              "p95_ms": 48.05950010195378,
+              "p99_ms": 1832.7129839546742
+            },
+            "success_latency": {
+              "mean_ms": 1012.7850785419079,
+              "p50_ms": 727.8449998702854,
+              "p95_ms": 2012.5856749946252,
+              "p99_ms": 2100.3027198836207
+            }
+          }
+        },
+        "cancelled": 0,
+        "submission_duration_seconds": 300.0,
+        "drain_overrun_seconds": 1.2110402001999319,
+        "stage": "stress_c4",
+        "concurrency": 4,
+        "stress": true
+      },
+      "rejection_latency": {
+        "mean_ms": 29.661918584933808,
+        "p50_ms": 8.574849925935268,
+        "p95_ms": 36.2537803594023,
+        "p99_ms": 131.47990585304805
+      },
+      "budget_classification": "Failed",
+      "budgets": {
+        "checks": {
+          "rejection_rate": true,
+          "timeouts": true,
+          "cancellations": true,
+          "other_errors": true,
+          "p95_latency": false,
+          "rss_peak": true,
+          "late_memory_growth": true
+        },
+        "all_passed": false,
+        "indeterminate": false,
+        "rejection_rate": 0.9870085323500407,
+        "other_errors": 0
+      },
+      "rss": {
+        "peak_mib": 1103.796875,
+        "end_mib": 1062.60546875,
+        "whole_slope_mib_per_minute": 4.969528917721014,
+        "late_slope_mib_per_minute": -12.541696771398064,
+        "idle_start_mib": 1055.98046875,
+        "idle_end_mib": 1055.98046875,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "private_commit": {
+        "peak_mib": 2511.72265625,
+        "end_mib": 2470.6796875,
+        "whole_slope_mib_per_minute": 5.7411424286351505,
+        "late_slope_mib_per_minute": -16.034778966010524,
+        "idle_start_mib": 2466.62890625,
+        "idle_end_mib": 2466.62890625,
+        "idle_only_delta_mib": 0.0,
+        "late_trend_sufficient_duration": true
+      },
+      "overall_sampled_peak_rss_mib": 1130.65625,
+      "overall_sampled_peak_private_commit_mib": 2538.60546875,
+      "os_lifetime_peak_rss_mib": 1131.21875,
+      "minimum_system_available_mib": 3200.39453125,
+      "max_checkpoint_native_threads": 83,
+      "sampling_scope": "RSS/private commit1s; native threads/virtual regions at stopped lifecycle checkpoints only. Missing continuous native sampler fields were detected; no invented or interpolated thread trace.",
+      "graceful_shutdown": "exit0; lifespan release/service-stop events checked",
+      "correctness_checks": 474,
+      "sampler_errors": [
+        "OSError"
+      ],
+      "by_method": {
+        "bm25": {
+          "requests": 4667,
+          "successful": 63,
+          "failed": 4604,
+          "timed_out": 0,
+          "statuses": {
+            "429": 4604,
+            "200": 63
+          },
+          "elapsed_seconds": 301.21104020019993,
+          "attempts_per_second": 15.494119992740234,
+          "successful_per_second": 0.20915568021054953,
+          "all_latency": {
+            "mean_ms": 37.44667973191756,
+            "p50_ms": 8.620200213044882,
+            "p95_ms": 49.53175005502997,
+            "p99_ms": 900.6407521572022
+          },
+          "success_latency": {
+            "mean_ms": 769.6960873547055,
+            "p50_ms": 570.5781001597643,
+            "p95_ms": 1916.3626298774034,
+            "p99_ms": 2063.143523987383
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.9865009642168416,
+          "rejection_latency": {
+            "mean_ms": 27.42675951466395,
+            "p50_ms": 8.60165013000369,
+            "p95_ms": 35.207089921459485,
+            "p99_ms": 125.94221799168741
+          }
+        },
+        "dense": {
+          "requests": 4663,
+          "successful": 66,
+          "failed": 4597,
+          "timed_out": 0,
+          "statuses": {
+            "429": 4597,
+            "200": 66
+          },
+          "elapsed_seconds": 301.21104020019993,
+          "attempts_per_second": 15.48084026701258,
+          "successful_per_second": 0.21911547450629,
+          "all_latency": {
+            "mean_ms": 44.397822133945105,
+            "p50_ms": 8.566000033169985,
+            "p95_ms": 62.26100004278123,
+            "p99_ms": 2018.3246317226442
+          },
+          "success_latency": {
+            "mean_ms": 805.953303034502,
+            "p50_ms": 612.5793000683188,
+            "p95_ms": 2001.8933499231935,
+            "p99_ms": 2163.772765337489
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.9858460218743298,
+          "rejection_latency": {
+            "mean_ms": 33.46402580167694,
+            "p50_ms": 8.546099998056889,
+            "p95_ms": 43.68272004649037,
+            "p99_ms": 2012.287412136793
+          }
+        },
+        "hybrid": {
+          "requests": 4662,
+          "successful": 57,
+          "failed": 4605,
+          "timed_out": 0,
+          "statuses": {
+            "429": 4605,
+            "200": 57
+          },
+          "elapsed_seconds": 301.21104020019993,
+          "attempts_per_second": 15.477520335580666,
+          "successful_per_second": 0.18923609161906862,
+          "all_latency": {
+            "mean_ms": 40.24160860193448,
+            "p50_ms": 8.583599934354424,
+            "p95_ms": 48.013289785012574,
+            "p99_ms": 1778.6715360544722
+          },
+          "success_latency": {
+            "mean_ms": 1057.744142125573,
+            "p50_ms": 766.4388003759086,
+            "p95_ms": 2152.556160278618,
+            "p99_ms": 2279.8241880908604
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.9877734877734877,
+          "rejection_latency": {
+            "mean_ms": 27.647114701641886,
+            "p50_ms": 8.566499687731266,
+            "p95_ms": 33.859039843082435,
+            "p99_ms": 115.17683191224934
+          }
+        },
+        "reranked": {
+          "requests": 4666,
+          "successful": 61,
+          "failed": 4605,
+          "timed_out": 0,
+          "statuses": {
+            "429": 4605,
+            "200": 61
+          },
+          "elapsed_seconds": 301.21104020019993,
+          "attempts_per_second": 15.49080006130832,
+          "successful_per_second": 0.20251581734672258,
+          "all_latency": {
+            "mean_ms": 93.72706026353015,
+            "p50_ms": 8.574800100177526,
+            "p95_ms": 57.12259979918599,
+            "p99_ms": 4043.0427802028153
+          },
+          "success_latency": {
+            "mean_ms": 4874.5079032664535,
+            "p50_ms": 4666.390200145543,
+            "p95_ms": 6392.179800197482,
+            "p99_ms": 7363.799279741942
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.9869267038148307,
+          "rejection_latency": {
+            "mean_ms": 30.39858438444691,
+            "p50_ms": 8.545999880880117,
+            "p95_ms": 41.22376032173634,
+            "p99_ms": 141.00313996896162
+          }
+        },
+        "router": {
+          "requests": 4665,
+          "successful": 56,
+          "failed": 4609,
+          "timed_out": 0,
+          "statuses": {
+            "429": 4609,
+            "200": 56
+          },
+          "elapsed_seconds": 301.21104020019993,
+          "attempts_per_second": 15.487480129876406,
+          "successful_per_second": 0.18591616018715515,
+          "all_latency": {
+            "mean_ms": 41.18455702385047,
+            "p50_ms": 8.642199914902449,
+            "p95_ms": 48.05950010195378,
+            "p99_ms": 1832.7129839546742
+          },
+          "success_latency": {
+            "mean_ms": 1012.7850785419079,
+            "p50_ms": 727.8449998702854,
+            "p95_ms": 2012.5856749946252,
+            "p99_ms": 2100.3027198836207
+          },
+          "cancelled": 0,
+          "other_errors": 0,
+          "rejection_rate": 0.9879957127545552,
+          "rejection_latency": {
+            "mean_ms": 29.379473664117082,
+            "p50_ms": 8.618600200861692,
+            "p95_ms": 32.44245992973446,
+            "p99_ms": 128.61989989876756
+          }
+        }
+      }
+    }
+  ],
+  "budget_classification": "Failed",
+  "individual_budget_results": {
+    "c1_r1": {
+      "rejection_rate": "Passed",
+      "timeouts": "Passed",
+      "cancellations": "Passed",
+      "other_errors": "Passed",
+      "p95_latency": "Passed",
+      "rss_peak": "Passed",
+      "late_memory_growth": "Failed"
+    },
+    "c2_r1": {
+      "rejection_rate": "Failed",
+      "timeouts": "Passed",
+      "cancellations": "Passed",
+      "other_errors": "Passed",
+      "p95_latency": "Passed",
+      "rss_peak": "Passed",
+      "late_memory_growth": "Failed"
+    },
+    "c1_r2": {
+      "rejection_rate": "Passed",
+      "timeouts": "Passed",
+      "cancellations": "Passed",
+      "other_errors": "Passed",
+      "p95_latency": "Passed",
+      "rss_peak": "Passed",
+      "late_memory_growth": "Failed"
+    },
+    "c2_r2": {
+      "rejection_rate": "Failed",
+      "timeouts": "Passed",
+      "cancellations": "Passed",
+      "other_errors": "Passed",
+      "p95_latency": "Passed",
+      "rss_peak": "Passed",
+      "late_memory_growth": "Failed"
+    },
+    "c4_stress": {
+      "rejection_rate": "Passed",
+      "timeouts": "Passed",
+      "cancellations": "Passed",
+      "other_errors": "Passed",
+      "p95_latency": "Failed",
+      "rss_peak": "Passed",
+      "late_memory_growth": "Passed"
+    }
+  },
+  "failures": [],
+  "independent_serving_pids": true,
+  "same_workload_sha256": true,
+  "variability": {
+    "1": {
+      "success_p95_ms": {
+        "n": 2,
+        "missing": 0,
+        "mean": 2650.191805092618,
+        "min": 2521.152399946004,
+        "max": 2779.2312102392316,
+        "sample_standard_deviation": 182.48927683889767,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "successful_per_second": {
+        "n": 2,
+        "missing": 0,
+        "mean": 1.7762914958491238,
+        "min": 1.6538456436231546,
+        "max": 1.898737348075093,
+        "sample_standard_deviation": 0.17316458487429756,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "rss_peak_mib": {
+        "n": 2,
+        "missing": 0,
+        "mean": 1022.87109375,
+        "min": 1022.0625,
+        "max": 1023.6796875,
+        "sample_standard_deviation": 1.1435242477001197,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "commit_peak_mib": {
+        "n": 2,
+        "missing": 0,
+        "mean": 2361.927734375,
+        "min": 2361.6875,
+        "max": 2362.16796875,
+        "sample_standard_deviation": 0.33974271127322403,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "rss_late_slope_mib_per_minute": {
+        "n": 2,
+        "missing": 0,
+        "mean": 6.35051726630623,
+        "min": 4.260986650371075,
+        "max": 8.440047882241386,
+        "sample_standard_deviation": 2.9550425360493033,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "commit_late_slope_mib_per_minute": {
+        "n": 2,
+        "missing": 0,
+        "mean": 5.175699605611255,
+        "min": 2.113988219667517,
+        "max": 8.237410991554993,
+        "sample_standard_deviation": 4.32991376607376,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "rejection_rate": {
+        "n": 2,
+        "missing": 0,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_standard_deviation": 0.0,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      }
+    },
+    "2": {
+      "success_p95_ms": {
+        "n": 2,
+        "missing": 0,
+        "mean": 2917.636082426179,
+        "min": 2703.566315048374,
+        "max": 3131.705849803984,
+        "sample_standard_deviation": 302.74036831974564,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "successful_per_second": {
+        "n": 2,
+        "missing": 0,
+        "mean": 1.6631143912341075,
+        "min": 1.5489079471629938,
+        "max": 1.777320835305221,
+        "sample_standard_deviation": 0.16151230211577317,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "rss_peak_mib": {
+        "n": 2,
+        "missing": 0,
+        "mean": 1062.89453125,
+        "min": 1054.16796875,
+        "max": 1071.62109375,
+        "sample_standard_deviation": 12.341223040396462,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "commit_peak_mib": {
+        "n": 2,
+        "missing": 0,
+        "mean": 2436.591796875,
+        "min": 2422.6484375,
+        "max": 2450.53515625,
+        "sample_standard_deviation": 19.718887933167043,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "rss_late_slope_mib_per_minute": {
+        "n": 2,
+        "missing": 0,
+        "mean": 5.745081997195169,
+        "min": 4.036691602283988,
+        "max": 7.45347239210635,
+        "sample_standard_deviation": 2.4160288663113194,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "commit_late_slope_mib_per_minute": {
+        "n": 2,
+        "missing": 0,
+        "mean": 2.8698769750484634,
+        "min": 0.8327562757668693,
+        "max": 4.906997674330057,
+        "sample_standard_deviation": 2.8809237211149936,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      },
+      "rejection_rate": {
+        "n": 2,
+        "missing": 0,
+        "mean": 0.17102769997040523,
+        "min": 0.1683991683991684,
+        "max": 0.17365623154164206,
+        "sample_standard_deviation": 0.003717304997168979,
+        "interpretation": "Descriptive independent-run variation; two repetitions do not establish a distribution or confidence interval."
+      }
+    }
+  },
+  "memory_attribution": {
+    "run_evidence": [
+      {
+        "run": "c1_r1",
+        "traced_python_current_delta_bytes": 280010,
+        "tensor_counts": [
+          6,
+          6,
+          6
+        ],
+        "logical_models_and_index": [
+          {
+            "label": "initial_after_warmup",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c1_stopped",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c1_after_idle",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          }
+        ],
+        "application_references": [
+          {
+            "label": "initial_after_warmup",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "soak_1_c1_stopped",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "soak_1_c1_after_idle",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          }
+        ],
+        "limits": "Tracemalloc started after initialization. GC census excludes untracked/native allocations; logical tensor sizes are not an accounting of all process memory."
+      },
+      {
+        "run": "c2_r1",
+        "traced_python_current_delta_bytes": 1374050,
+        "tensor_counts": [
+          6,
+          6,
+          6
+        ],
+        "logical_models_and_index": [
+          {
+            "label": "initial_after_warmup",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c2_stopped",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c2_after_idle",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          }
+        ],
+        "application_references": [
+          {
+            "label": "initial_after_warmup",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "soak_1_c2_stopped",
+            "tracked_requests": 52,
+            "tracked_json_responses": 52
+          },
+          {
+            "label": "soak_1_c2_after_idle",
+            "tracked_requests": 52,
+            "tracked_json_responses": 52
+          }
+        ],
+        "limits": "Tracemalloc started after initialization. GC census excludes untracked/native allocations; logical tensor sizes are not an accounting of all process memory."
+      },
+      {
+        "run": "c1_r2",
+        "traced_python_current_delta_bytes": 329674,
+        "tensor_counts": [
+          6,
+          6,
+          6
+        ],
+        "logical_models_and_index": [
+          {
+            "label": "initial_after_warmup",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c1_stopped",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c1_after_idle",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          }
+        ],
+        "application_references": [
+          {
+            "label": "initial_after_warmup",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "soak_1_c1_stopped",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "soak_1_c1_after_idle",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          }
+        ],
+        "limits": "Tracemalloc started after initialization. GC census excludes untracked/native allocations; logical tensor sizes are not an accounting of all process memory."
+      },
+      {
+        "run": "c2_r2",
+        "traced_python_current_delta_bytes": 764636,
+        "tensor_counts": [
+          6,
+          6,
+          6
+        ],
+        "logical_models_and_index": [
+          {
+            "label": "initial_after_warmup",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c2_stopped",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "soak_1_c2_after_idle",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          }
+        ],
+        "application_references": [
+          {
+            "label": "initial_after_warmup",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "soak_1_c2_stopped",
+            "tracked_requests": 22,
+            "tracked_json_responses": 22
+          },
+          {
+            "label": "soak_1_c2_after_idle",
+            "tracked_requests": 22,
+            "tracked_json_responses": 22
+          }
+        ],
+        "limits": "Tracemalloc started after initialization. GC census excludes untracked/native allocations; logical tensor sizes are not an accounting of all process memory."
+      },
+      {
+        "run": "c4_stress",
+        "traced_python_current_delta_bytes": 2062140,
+        "tensor_counts": [
+          6,
+          6,
+          6
+        ],
+        "logical_models_and_index": [
+          {
+            "label": "initial_after_warmup",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "stress_c4_stopped",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          },
+          {
+            "label": "stress_c4_after_idle",
+            "models": {
+              "encoder": {
+                "parameter_bytes": 90852864,
+                "buffer_bytes": 8192
+              },
+              "scorer": {
+                "parameter_bytes": 90854404,
+                "buffer_bytes": 8192
+              }
+            },
+            "dense_index_bytes": 7961088
+          }
+        ],
+        "application_references": [
+          {
+            "label": "initial_after_warmup",
+            "tracked_requests": 0,
+            "tracked_json_responses": 0
+          },
+          {
+            "label": "stress_c4_stopped",
+            "tracked_requests": 82,
+            "tracked_json_responses": 82
+          },
+          {
+            "label": "stress_c4_after_idle",
+            "tracked_requests": 82,
+            "tracked_json_responses": 82
+          }
+        ],
+        "limits": "Tracemalloc started after initialization. GC census excludes untracked/native allocations; logical tensor sizes are not an accounting of all process memory."
+      }
+    ],
+    "controlled_probes": {
+      "blas_import_kernel": {
+        "controls": {
+          "1": {
+            "pid": 36156,
+            "status": "complete",
+            "snapshots": [
+              {
+                "label": "before_numpy_import",
+                "seconds": 4.299916326999664e-06,
+                "rss_bytes": 16605184,
+                "os_peak_rss_bytes": 16605184,
+                "private_commit_bytes": 9699328,
+                "native_threads": 4,
+                "regions": {
+                  "committed_bytes": 44347392,
+                  "committed_private_bytes": 7254016,
+                  "reserved_bytes": 4366090240,
+                  "reserved_private_bytes": 4341776384,
+                  "committed_mapped_bytes": 5959680,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 31133696,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 4410437632
+                }
+              },
+              {
+                "label": "after_numpy_import",
+                "seconds": 0.18503150017932057,
+                "rss_bytes": 27136000,
+                "os_peak_rss_bytes": 27136000,
+                "private_commit_bytes": 17997824,
+                "native_threads": 4,
+                "regions": {
+                  "committed_bytes": 77602816,
+                  "committed_private_bytes": 15052800,
+                  "reserved_bytes": 4366680064,
+                  "reserved_private_bytes": 4342366208,
+                  "committed_mapped_bytes": 5959680,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 56590336,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 4444282880
+                }
+              },
+              {
+                "label": "after_authored_arrays",
+                "seconds": 0.27792249992489815,
+                "rss_bytes": 39219200,
+                "os_peak_rss_bytes": 47140864,
+                "private_commit_bytes": 28082176,
+                "native_threads": 4,
+                "regions": {
+                  "committed_bytes": 95039488,
+                  "committed_private_bytes": 24875008,
+                  "reserved_bytes": 4365873152,
+                  "reserved_private_bytes": 4341559296,
+                  "committed_mapped_bytes": 5971968,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 64192512,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 4460912640
+                }
+              },
+              {
+                "label": "after_100_kernel_calls",
+                "seconds": 0.3592154998332262,
+                "rss_bytes": 39530496,
+                "os_peak_rss_bytes": 47140864,
+                "private_commit_bytes": 61771776,
+                "native_threads": 4,
+                "regions": {
+                  "committed_bytes": 128663552,
+                  "committed_private_bytes": 58499072,
+                  "reserved_bytes": 4365803520,
+                  "reserved_private_bytes": 4341489664,
+                  "committed_mapped_bytes": 5971968,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 64192512,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 4494467072
+                }
+              }
+            ],
+            "threadpools": [
+              {
+                "user_api": "blas",
+                "internal_api": "openblas",
+                "num_threads": 1,
+                "prefix": "libscipy_openblas",
+                "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+                "version": "0.3.29",
+                "threading_layer": "pthreads",
+                "architecture": "Haswell"
+              }
+            ],
+            "environment": {
+              "OPENBLAS_NUM_THREADS": "1",
+              "OMP_NUM_THREADS": null,
+              "MKL_NUM_THREADS": null
+            },
+            "array_bytes": 7962624,
+            "versions": {
+              "numpy": "2.2.6"
+            },
+            "design": "Only OPENBLAS_NUM_THREADS differs across fresh processes1/20; seed42, same float32 normalized authored5183x384 matrix/vector and100calls. No IR judgments/models. Private/RSS snapshots are not native allocation stacks; no GC/allocator release."
+          },
+          "20": {
+            "pid": 39196,
+            "status": "complete",
+            "snapshots": [
+              {
+                "label": "before_numpy_import",
+                "seconds": 5.09992241859436e-06,
+                "rss_bytes": 16420864,
+                "os_peak_rss_bytes": 16420864,
+                "private_commit_bytes": 9699328,
+                "native_threads": 4,
+                "regions": {
+                  "committed_bytes": 44343296,
+                  "committed_private_bytes": 7249920,
+                  "reserved_bytes": 4366094336,
+                  "reserved_private_bytes": 4341780480,
+                  "committed_mapped_bytes": 5959680,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 31133696,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 4410437632
+                }
+              },
+              {
+                "label": "after_numpy_import",
+                "seconds": 0.1772642000578344,
+                "rss_bytes": 28299264,
+                "os_peak_rss_bytes": 28299264,
+                "private_commit_bytes": 658268160,
+                "native_threads": 23,
+                "regions": {
+                  "committed_bytes": 716541952,
+                  "committed_private_bytes": 653991936,
+                  "reserved_bytes": 4403875840,
+                  "reserved_private_bytes": 4379561984,
+                  "committed_mapped_bytes": 5959680,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 56590336,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 5120417792
+                }
+              },
+              {
+                "label": "after_authored_arrays",
+                "seconds": 0.26459999987855554,
+                "rss_bytes": 40271872,
+                "os_peak_rss_bytes": 48197632,
+                "private_commit_bytes": 668286976,
+                "native_threads": 23,
+                "regions": {
+                  "committed_bytes": 733913088,
+                  "committed_private_bytes": 663748608,
+                  "reserved_bytes": 4403159040,
+                  "reserved_private_bytes": 4378845184,
+                  "committed_mapped_bytes": 5971968,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 64192512,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 5137072128
+                }
+              },
+              {
+                "label": "after_100_kernel_calls",
+                "seconds": 0.3704761997796595,
+                "rss_bytes": 40620032,
+                "os_peak_rss_bytes": 48197632,
+                "private_commit_bytes": 701976576,
+                "native_threads": 23,
+                "regions": {
+                  "committed_bytes": 767537152,
+                  "committed_private_bytes": 697372672,
+                  "reserved_bytes": 4403089408,
+                  "reserved_private_bytes": 4378775552,
+                  "committed_mapped_bytes": 5971968,
+                  "reserved_mapped_bytes": 23945216,
+                  "committed_image_bytes": 64192512,
+                  "reserved_image_bytes": 368640,
+                  "virtual_allocated_bytes": 5170626560
+                }
+              }
+            ],
+            "threadpools": [
+              {
+                "user_api": "blas",
+                "internal_api": "openblas",
+                "num_threads": 20,
+                "prefix": "libscipy_openblas",
+                "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+                "version": "0.3.29",
+                "threading_layer": "pthreads",
+                "architecture": "Haswell"
+              }
+            ],
+            "environment": {
+              "OPENBLAS_NUM_THREADS": "20",
+              "OMP_NUM_THREADS": null,
+              "MKL_NUM_THREADS": null
+            },
+            "array_bytes": 7962624,
+            "versions": {
+              "numpy": "2.2.6"
+            },
+            "design": "Only OPENBLAS_NUM_THREADS differs across fresh processes1/20; seed42, same float32 normalized authored5183x384 matrix/vector and100calls. No IR judgments/models. Private/RSS snapshots are not native allocation stacks; no GC/allocator release."
+          }
+        },
+        "max_abs_score_delta": 2.9802322387695312e-08,
+        "identical_ranking": true,
+        "comparison": "Only OPENBLAS_NUM_THREADS1vs20 changed in fresh processes; authored normalized matrix/vector, seed42. No service configuration changed; no leak attribution from this import/kernel-only control.",
+        "commands_reconstructed_from_executed_parent_script": [
+          [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "app.evaluation.native_control",
+            "--output",
+            "experiments\\results\\phase6_2\\controls-20261110\\blas_1"
+          ],
+          [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "app.evaluation.native_control",
+            "--output",
+            "experiments\\results\\phase6_2\\controls-20261110\\blas_20"
+          ]
+        ]
+      },
+      "excluded_control_attempt": {
+        "excluded_from_primary_control_comparison": true,
+        "reason": "First hybrid control recorded30014.849s between before_service and all_resources_initialized. Wrapper start2026-11-09T21:25:49UTC to finish2026-11-10T05:46:10UTC. System suspension/stall suspected; not attributed to normal model load. Preserve entire attempt; fresh controls replace it for primary comparisons. All five long serving runs finished by2026-11-09T21:25:37UTC."
+      },
+      "hybrid": {
+        "status": "complete",
+        "method": "hybrid",
+        "pid": 4104,
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.native_operator",
+          "--method",
+          "hybrid",
+          "--output",
+          "experiments\\results\\phase6_2\\repeat-20261109T194018Z-c8b6ba59\\inference_controls_clean\\hybrid"
+        ],
+        "query_id": "94",
+        "versions": {
+          "torch": "2.9.0",
+          "numpy": "2.2.6",
+          "sentence-transformers": "5.1.2",
+          "transformers": "4.57.1",
+          "threadpoolctl": "3.7.0"
+        },
+        "snapshots": [
+          {
+            "label": "before_service",
+            "elapsed_seconds": 1.600012183189392e-06,
+            "rss_bytes": 207134720,
+            "os_peak_rss_bytes": 207134720,
+            "private_commit_bytes": 830128128,
+            "native_threads": 23,
+            "region_totals": {
+              "committed_bytes": 1184952320,
+              "committed_private_bytes": 811069440,
+              "reserved_bytes": 4412985344,
+              "reserved_private_bytes": 4388503552,
+              "committed_mapped_bytes": 6139904,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 367742976,
+              "reserved_image_bytes": 536576,
+              "virtual_allocated_bytes": 5597937664
+            }
+          },
+          {
+            "label": "all_resources_initialized",
+            "elapsed_seconds": 11.70787309994921,
+            "rss_bytes": 643067904,
+            "os_peak_rss_bytes": 643067904,
+            "private_commit_bytes": 2095476736,
+            "native_threads": 48,
+            "region_totals": {
+              "committed_bytes": 2534449152,
+              "committed_private_bytes": 1883848704,
+              "reserved_bytes": 5437231104,
+              "reserved_private_bytes": 5412749312,
+              "committed_mapped_bytes": 187912192,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 462688256,
+              "reserved_image_bytes": 536576,
+              "virtual_allocated_bytes": 7971680256
+            }
+          },
+          {
+            "label": "after_5_warmup",
+            "elapsed_seconds": 12.355202300008386,
+            "rss_bytes": 690896896,
+            "os_peak_rss_bytes": 690896896,
+            "private_commit_bytes": 2130198528,
+            "native_threads": 69,
+            "region_totals": {
+              "committed_bytes": 2569117696,
+              "committed_private_bytes": 1918398464,
+              "reserved_bytes": 5480304640,
+              "reserved_private_bytes": 5455810560,
+              "committed_mapped_bytes": 187916288,
+              "committed_image_bytes": 462802944,
+              "reserved_mapped_bytes": 23941120,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 8049422336
+            }
+          },
+          {
+            "label": "after_40_repeated_calls",
+            "elapsed_seconds": 19.448511899914593,
+            "rss_bytes": 690991104,
+            "os_peak_rss_bytes": 691949568,
+            "private_commit_bytes": 2130198528,
+            "native_threads": 69,
+            "region_totals": {
+              "committed_bytes": 2569117696,
+              "committed_private_bytes": 1918398464,
+              "reserved_bytes": 5480304640,
+              "reserved_private_bytes": 5455810560,
+              "committed_mapped_bytes": 187916288,
+              "committed_image_bytes": 462802944,
+              "reserved_mapped_bytes": 23941120,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 8049422336
+            }
+          },
+          {
+            "label": "after_separate_profiler_call",
+            "elapsed_seconds": 19.973130599595606,
+            "rss_bytes": 703324160,
+            "os_peak_rss_bytes": 703324160,
+            "private_commit_bytes": 2143387648,
+            "native_threads": 70,
+            "region_totals": {
+              "committed_bytes": 2582278144,
+              "committed_private_bytes": 1931558912,
+              "reserved_bytes": 5487853568,
+              "reserved_private_bytes": 5463359488,
+              "committed_mapped_bytes": 187916288,
+              "committed_image_bytes": 462802944,
+              "reserved_mapped_bytes": 23941120,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 8070131712
+            }
+          }
+        ],
+        "configuration": {
+          "thread_id": 15932,
+          "native_thread_id": 15932,
+          "thread_name": "MainThread",
+          "torch_intraop_threads": 4,
+          "torch_interop_threads": 14,
+          "grad_enabled": true,
+          "inference_mode_enabled": false,
+          "threadpools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 20,
+              "prefix": "libscipy_openblas",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+              "version": "0.3.29",
+              "threading_layer": "pthreads",
+              "architecture": "Haswell"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 4,
+              "prefix": "libiomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 1,
+              "prefix": "libiomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 20,
+              "prefix": "vcomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 20,
+              "prefix": "libscipy_openblas",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "Haswell"
+            }
+          ],
+          "environment": {
+            "OMP_NUM_THREADS": null,
+            "MKL_NUM_THREADS": null,
+            "OPENBLAS_NUM_THREADS": null,
+            "NUMEXPR_NUM_THREADS": null,
+            "TOKENIZERS_PARALLELISM": null,
+            "RAYON_NUM_THREADS": null,
+            "OMP_WAIT_POLICY": null,
+            "KMP_BLOCKTIME": null
+          }
+        },
+        "design": "Fresh process per condition; same all-resource initialization/seed/query/k10/candidate settings/40repetitions. Hybrid vs reranked changes only selected pipeline; reranked vs reranked_blas1 changes only child OPENBLAS_NUM_THREADS. Actual configuration is recorded. No forced GC, allocator release or HTTP traffic; no quality evaluation or load-latency claim.",
+        "profiler_status": "complete",
+        "profiler_error": null,
+        "top_self_operator_allocations": [
+          {
+            "operator": "aten::addmm",
+            "count": 37,
+            "self_cpu_memory_bytes": 1660416,
+            "inclusive_cpu_memory_bytes": 1660416,
+            "self_cpu_time_us": 12711.699999999939
+          },
+          {
+            "operator": "aten::gelu",
+            "count": 6,
+            "self_cpu_memory_bytes": 737280,
+            "inclusive_cpu_memory_bytes": 737280,
+            "self_cpu_time_us": 1102.8999999999942
+          },
+          {
+            "operator": "aten::empty",
+            "count": 66,
+            "self_cpu_memory_bytes": 511372,
+            "inclusive_cpu_memory_bytes": 511372,
+            "self_cpu_time_us": 385.19999999995343
+          },
+          {
+            "operator": "aten::add",
+            "count": 13,
+            "self_cpu_memory_bytes": 399360,
+            "inclusive_cpu_memory_bytes": 399360,
+            "self_cpu_time_us": 313.59999999999854
+          },
+          {
+            "operator": "aten::empty_strided",
+            "count": 7,
+            "self_cpu_memory_bytes": 215040,
+            "inclusive_cpu_memory_bytes": 215040,
+            "self_cpu_time_us": 89.80000000000291
+          }
+        ],
+        "source": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/inference_controls_clean/hybrid/operator_control.json"
+      },
+      "reranked": {
+        "status": "complete",
+        "method": "reranked",
+        "pid": 33444,
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.native_operator",
+          "--method",
+          "reranked",
+          "--output",
+          "experiments\\results\\phase6_2\\repeat-20261109T194018Z-c8b6ba59\\inference_controls_clean\\reranked"
+        ],
+        "query_id": "94",
+        "versions": {
+          "torch": "2.9.0",
+          "numpy": "2.2.6",
+          "sentence-transformers": "5.1.2",
+          "transformers": "4.57.1",
+          "threadpoolctl": "3.7.0"
+        },
+        "snapshots": [
+          {
+            "label": "before_service",
+            "elapsed_seconds": 9.997747838497162e-07,
+            "rss_bytes": 206786560,
+            "os_peak_rss_bytes": 206786560,
+            "private_commit_bytes": 829579264,
+            "native_threads": 23,
+            "region_totals": {
+              "committed_bytes": 1184403456,
+              "committed_private_bytes": 810520576,
+              "reserved_bytes": 4413526016,
+              "reserved_private_bytes": 4389044224,
+              "committed_mapped_bytes": 6139904,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 367742976,
+              "reserved_image_bytes": 536576,
+              "virtual_allocated_bytes": 5597929472
+            }
+          },
+          {
+            "label": "all_resources_initialized",
+            "elapsed_seconds": 12.54975700005889,
+            "rss_bytes": 643690496,
+            "os_peak_rss_bytes": 643690496,
+            "private_commit_bytes": 2096353280,
+            "native_threads": 48,
+            "region_totals": {
+              "committed_bytes": 2535329792,
+              "committed_private_bytes": 1884729344,
+              "reserved_bytes": 5436387328,
+              "reserved_private_bytes": 5411905536,
+              "committed_mapped_bytes": 187912192,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 462688256,
+              "reserved_image_bytes": 536576,
+              "virtual_allocated_bytes": 7971717120
+            }
+          },
+          {
+            "label": "after_5_warmup",
+            "elapsed_seconds": 28.92991690011695,
+            "rss_bytes": 866291712,
+            "os_peak_rss_bytes": 894595072,
+            "private_commit_bytes": 2327187456,
+            "native_threads": 69,
+            "region_totals": {
+              "committed_bytes": 2765709312,
+              "committed_private_bytes": 2114990080,
+              "reserved_bytes": 5325041664,
+              "reserved_private_bytes": 5300547584,
+              "committed_mapped_bytes": 187916288,
+              "committed_image_bytes": 462802944,
+              "reserved_mapped_bytes": 23941120,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 8090750976
+            }
+          },
+          {
+            "label": "after_40_repeated_calls",
+            "elapsed_seconds": 147.80168889975175,
+            "rss_bytes": 856555520,
+            "os_peak_rss_bytes": 899678208,
+            "private_commit_bytes": 2315530240,
+            "native_threads": 66,
+            "region_totals": {
+              "committed_bytes": 2754093056,
+              "committed_private_bytes": 2103373824,
+              "reserved_bytes": 5330563072,
+              "reserved_private_bytes": 5306068992,
+              "committed_mapped_bytes": 187916288,
+              "committed_image_bytes": 462802944,
+              "reserved_mapped_bytes": 23941120,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 8084656128
+            }
+          },
+          {
+            "label": "after_separate_profiler_call",
+            "elapsed_seconds": 151.88875919999555,
+            "rss_bytes": 887435264,
+            "os_peak_rss_bytes": 901193728,
+            "private_commit_bytes": 2347352064,
+            "native_threads": 67,
+            "region_totals": {
+              "committed_bytes": 2785853440,
+              "committed_private_bytes": 2135134208,
+              "reserved_bytes": 5322657792,
+              "reserved_private_bytes": 5298163712,
+              "committed_mapped_bytes": 187916288,
+              "committed_image_bytes": 462802944,
+              "reserved_mapped_bytes": 23941120,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 8108511232
+            }
+          }
+        ],
+        "configuration": {
+          "thread_id": 35700,
+          "native_thread_id": 35700,
+          "thread_name": "MainThread",
+          "torch_intraop_threads": 4,
+          "torch_interop_threads": 14,
+          "grad_enabled": true,
+          "inference_mode_enabled": false,
+          "threadpools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 20,
+              "prefix": "libscipy_openblas",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+              "version": "0.3.29",
+              "threading_layer": "pthreads",
+              "architecture": "Haswell"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 4,
+              "prefix": "libiomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 1,
+              "prefix": "libiomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 20,
+              "prefix": "vcomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 20,
+              "prefix": "libscipy_openblas",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "Haswell"
+            }
+          ],
+          "environment": {
+            "OMP_NUM_THREADS": null,
+            "MKL_NUM_THREADS": null,
+            "OPENBLAS_NUM_THREADS": null,
+            "NUMEXPR_NUM_THREADS": null,
+            "TOKENIZERS_PARALLELISM": null,
+            "RAYON_NUM_THREADS": null,
+            "OMP_WAIT_POLICY": null,
+            "KMP_BLOCKTIME": null
+          }
+        },
+        "design": "Fresh process per condition; same all-resource initialization/seed/query/k10/candidate settings/40repetitions. Hybrid vs reranked changes only selected pipeline; reranked vs reranked_blas1 changes only child OPENBLAS_NUM_THREADS. Actual configuration is recorded. No forced GC, allocator release or HTTP traffic; no quality evaluation or load-latency claim.",
+        "profiler_status": "complete",
+        "profiler_error": null,
+        "top_self_operator_allocations": [
+          {
+            "operator": "aten::addmm",
+            "count": 113,
+            "self_cpu_memory_bytes": 851037776,
+            "inclusive_cpu_memory_bytes": 851037776,
+            "self_cpu_time_us": 1417472.4
+          },
+          {
+            "operator": "aten::gelu",
+            "count": 18,
+            "self_cpu_memory_bytes": 378224640,
+            "inclusive_cpu_memory_bytes": 378224640,
+            "self_cpu_time_us": 55095.199999999946
+          },
+          {
+            "operator": "aten::empty",
+            "count": 202,
+            "self_cpu_memory_bytes": 236924332,
+            "inclusive_cpu_memory_bytes": 236924332,
+            "self_cpu_time_us": 3900.4000000021842
+          },
+          {
+            "operator": "aten::add",
+            "count": 39,
+            "self_cpu_memory_bytes": 204871680,
+            "inclusive_cpu_memory_bytes": 204871680,
+            "self_cpu_time_us": 46822.30000000107
+          },
+          {
+            "operator": "aten::empty_strided",
+            "count": 23,
+            "self_cpu_memory_bytes": 120801280,
+            "inclusive_cpu_memory_bytes": 120801280,
+            "self_cpu_time_us": 904.7999999993262
+          }
+        ],
+        "source": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/inference_controls_clean/reranked/operator_control.json"
+      },
+      "reranked_blas1": {
+        "status": "complete",
+        "method": "reranked",
+        "pid": 6720,
+        "command": [
+          "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+          "-m",
+          "app.evaluation.native_operator",
+          "--method",
+          "reranked",
+          "--output",
+          "experiments\\results\\phase6_2\\repeat-20261109T194018Z-c8b6ba59\\inference_controls_clean\\reranked_blas1"
+        ],
+        "query_id": "94",
+        "versions": {
+          "torch": "2.9.0",
+          "numpy": "2.2.6",
+          "sentence-transformers": "5.1.2",
+          "transformers": "4.57.1",
+          "threadpoolctl": "3.7.0"
+        },
+        "snapshots": [
+          {
+            "label": "before_service",
+            "elapsed_seconds": 1.000240445137024e-06,
+            "rss_bytes": 205352960,
+            "os_peak_rss_bytes": 205352960,
+            "private_commit_bytes": 189526016,
+            "native_threads": 4,
+            "region_totals": {
+              "committed_bytes": 545746944,
+              "committed_private_bytes": 171864064,
+              "reserved_bytes": 4376006656,
+              "reserved_private_bytes": 4351524864,
+              "committed_mapped_bytes": 6139904,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 367742976,
+              "reserved_image_bytes": 536576,
+              "virtual_allocated_bytes": 4921753600
+            }
+          },
+          {
+            "label": "all_resources_initialized",
+            "elapsed_seconds": 11.399253900162876,
+            "rss_bytes": 640122880,
+            "os_peak_rss_bytes": 640122880,
+            "private_commit_bytes": 814067712,
+            "native_threads": 10,
+            "region_totals": {
+              "committed_bytes": 1255694336,
+              "committed_private_bytes": 605093888,
+              "reserved_bytes": 5362655232,
+              "reserved_private_bytes": 5338173440,
+              "committed_mapped_bytes": 187912192,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 462688256,
+              "reserved_image_bytes": 536576,
+              "virtual_allocated_bytes": 6618349568
+            }
+          },
+          {
+            "label": "after_5_warmup",
+            "elapsed_seconds": 31.101267900317907,
+            "rss_bytes": 863285248,
+            "os_peak_rss_bytes": 891068416,
+            "private_commit_bytes": 1045643264,
+            "native_threads": 31,
+            "region_totals": {
+              "committed_bytes": 1486807040,
+              "committed_private_bytes": 836091904,
+              "reserved_bytes": 5235093504,
+              "reserved_private_bytes": 5210595328,
+              "committed_mapped_bytes": 187912192,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 462802944,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 6721900544
+            }
+          },
+          {
+            "label": "after_40_repeated_calls",
+            "elapsed_seconds": 142.0303275999613,
+            "rss_bytes": 852189184,
+            "os_peak_rss_bytes": 895049728,
+            "private_commit_bytes": 1032650752,
+            "native_threads": 28,
+            "region_totals": {
+              "committed_bytes": 1473859584,
+              "committed_private_bytes": 823144448,
+              "reserved_bytes": 5258526720,
+              "reserved_private_bytes": 5234028544,
+              "committed_mapped_bytes": 187912192,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 462802944,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 6732386304
+            }
+          },
+          {
+            "label": "after_separate_profiler_call",
+            "elapsed_seconds": 146.57041490031406,
+            "rss_bytes": 883404800,
+            "os_peak_rss_bytes": 897523712,
+            "private_commit_bytes": 1064685568,
+            "native_threads": 29,
+            "region_totals": {
+              "committed_bytes": 1505828864,
+              "committed_private_bytes": 855113728,
+              "reserved_bytes": 5250412544,
+              "reserved_private_bytes": 5225914368,
+              "committed_mapped_bytes": 187912192,
+              "reserved_mapped_bytes": 23945216,
+              "committed_image_bytes": 462802944,
+              "reserved_image_bytes": 552960,
+              "virtual_allocated_bytes": 6756241408
+            }
+          }
+        ],
+        "configuration": {
+          "thread_id": 38256,
+          "native_thread_id": 38256,
+          "thread_name": "MainThread",
+          "torch_intraop_threads": 4,
+          "torch_interop_threads": 14,
+          "grad_enabled": true,
+          "inference_mode_enabled": false,
+          "threadpools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 1,
+              "prefix": "libscipy_openblas",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll",
+              "version": "0.3.29",
+              "threading_layer": "pthreads",
+              "architecture": "Haswell"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 4,
+              "prefix": "libiomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 1,
+              "prefix": "libiomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 20,
+              "prefix": "vcomp",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 1,
+              "prefix": "libscipy_openblas",
+              "filepath": "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "Haswell"
+            }
+          ],
+          "environment": {
+            "OMP_NUM_THREADS": null,
+            "MKL_NUM_THREADS": null,
+            "OPENBLAS_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": null,
+            "TOKENIZERS_PARALLELISM": null,
+            "RAYON_NUM_THREADS": null,
+            "OMP_WAIT_POLICY": null,
+            "KMP_BLOCKTIME": null
+          }
+        },
+        "design": "Fresh process per condition; same all-resource initialization/seed/query/k10/candidate settings/40repetitions. Hybrid vs reranked changes only selected pipeline; reranked vs reranked_blas1 changes only child OPENBLAS_NUM_THREADS. Actual configuration is recorded. No forced GC, allocator release or HTTP traffic; no quality evaluation or load-latency claim.",
+        "profiler_status": "complete",
+        "profiler_error": null,
+        "top_self_operator_allocations": [
+          {
+            "operator": "aten::addmm",
+            "count": 113,
+            "self_cpu_memory_bytes": 851037776,
+            "inclusive_cpu_memory_bytes": 851037776,
+            "self_cpu_time_us": 1901410.8000000038
+          },
+          {
+            "operator": "aten::gelu",
+            "count": 18,
+            "self_cpu_memory_bytes": 378224640,
+            "inclusive_cpu_memory_bytes": 378224640,
+            "self_cpu_time_us": 96282.89999999986
+          },
+          {
+            "operator": "aten::empty",
+            "count": 202,
+            "self_cpu_memory_bytes": 236924332,
+            "inclusive_cpu_memory_bytes": 236924332,
+            "self_cpu_time_us": 4294.299999997085
+          },
+          {
+            "operator": "aten::add",
+            "count": 39,
+            "self_cpu_memory_bytes": 204871680,
+            "inclusive_cpu_memory_bytes": 204871680,
+            "self_cpu_time_us": 61706.59999999968
+          },
+          {
+            "operator": "aten::empty_strided",
+            "count": 23,
+            "self_cpu_memory_bytes": 120801280,
+            "inclusive_cpu_memory_bytes": 120801280,
+            "self_cpu_time_us": 992.6999999979889
+          }
+        ],
+        "source": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/inference_controls_clean/reranked_blas1/operator_control.json"
+      },
+      "reranked_blas_comparison": {
+        "same_ordered_ids_ranks": true,
+        "max_absolute_score_delta": 0.0,
+        "absolute_tolerance": 1e-05,
+        "equivalent": true
+      }
+    },
+    "leak_status": "Inconclusive",
+    "conclusion": "Native allocation stacks/heap ownership were not captured. Import/thread and fixed-query operator probes can identify contributors, but cannot rule out a leak or fully attribute long-run retention. No forced GC, allocator release or production memory optimization."
+  },
+  "full_duration_design_satisfied": true,
+  "limitations": "Two repetitions per normal level; one stress run. Closed-loop duration-based workload does not guarantee equal per-method completion or the same query prefix length. Profiling perturbs execution. Traced Python memory cannot be subtracted from RSS/private commit to obtain a native leak size. No native allocation stacks, no proof of lifetime boundedness. All attempts including429/timeouts/errors stay in denominators.",
+  "artifact_directory": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59",
+  "verification": {
+    "checks": {
+      "started_utc": "2026-11-10T06:03:42.508064+00:00",
+      "checks": [
+        {
+          "name": "pytest",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "pytest",
+            "-q"
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/pytest.log"
+        },
+        {
+          "name": "ruff_check",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "ruff",
+            "check",
+            "."
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/ruff_check.log"
+        },
+        {
+          "name": "ruff_format",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "ruff",
+            "format",
+            "--check",
+            "."
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/ruff_format.log"
+        },
+        {
+          "name": "dependencies",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "pip",
+            "check"
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/dependencies.log"
+        },
+        {
+          "name": "phase2_replay",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "app.evaluation.comparison",
+            "--dataset",
+            "data/public/scifact",
+            "--replay",
+            "experiments/results/phase2/phase2-20261025T180228Z-bdac57e0c104"
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/phase2_replay.log"
+        },
+        {
+          "name": "phase3_replay",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "app.evaluation.phase3",
+            "--replay",
+            "experiments/results/phase3/phase3-20261031T065803Z-72804b2af31a"
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/phase3_replay.log"
+        },
+        {
+          "name": "phase4_replay",
+          "command": [
+            "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+            "-m",
+            "app.evaluation.phase4",
+            "--replay",
+            "experiments/results/phase4/phase4-20261031T071828Z-46027d7d4330"
+          ],
+          "exit_code": 0,
+          "log": "experiments/results/phase6_2/repeat-20261109T194018Z-c8b6ba59/verification-20261110T060342Z/phase4_replay.log"
+        }
+      ],
+      "prior_files": {
+        "count": 423,
+        "unchanged": 422,
+        "intentional_benchmark_change": [
+          "app/evaluation/api_soak.py"
+        ],
+        "unexpected_changes": []
+      },
+      "finished_utc": "2026-11-10T06:04:14.089560+00:00",
+      "status": "passed"
+    },
+    "sampler_fix_validation": {
+      "run_id": "phase6_2-20261110T055917Z-deed7c48cf51",
+      "status": "complete",
+      "samples": 97,
+      "native_samples": 97,
+      "all_have_virtual": true,
+      "sampling_mean_ms": 198.24335053467107,
+      "sampling_max_ms": 484.66339986771345,
+      "native_threads_min": 26,
+      "native_threads_max": 75,
+      "correctness_checks": 99,
+      "sampler_errors": [],
+      "summary": [
+        {
+          "requests": 15,
+          "successful": 15,
+          "failed": 0,
+          "timed_out": 0,
+          "statuses": {
+            "200": 15
+          },
+          "elapsed_seconds": 12.491629600059241,
+          "attempts_per_second": 1.2008040968432865,
+          "successful_per_second": 1.2008040968432865,
+          "all_latency": {
+            "mean_ms": 832.3734266373018,
+            "p50_ms": 137.64039985835552,
+            "p95_ms": 2853.978540096432,
+            "p99_ms": 2944.922987986356
+          },
+          "success_latency": {
+            "mean_ms": 832.3734266373018,
+            "p50_ms": 137.64039985835552,
+            "p95_ms": 2853.978540096432,
+            "p99_ms": 2944.922987986356
+          },
+          "by_method": {
+            "bm25": {
+              "requests": 1,
+              "successful": 1,
+              "failed": 0,
+              "timed_out": 0,
+              "statuses": {
+                "200": 1
+              },
+              "elapsed_seconds": 12.491629600059241,
+              "attempts_per_second": 0.08005360645621909,
+              "successful_per_second": 0.08005360645621909,
+              "all_latency": {
+                "mean_ms": 80.87199972942472,
+                "p50_ms": 80.87199972942472,
+                "p95_ms": 80.87199972942472,
+                "p99_ms": 80.87199972942472
+              },
+              "success_latency": {
+                "mean_ms": 80.87199972942472,
+                "p50_ms": 80.87199972942472,
+                "p95_ms": 80.87199972942472,
+                "p99_ms": 80.87199972942472
+              }
+            },
+            "dense": {
+              "requests": 6,
+              "successful": 6,
+              "failed": 0,
+              "timed_out": 0,
+              "statuses": {
+                "200": 6
+              },
+              "elapsed_seconds": 12.491629600059241,
+              "attempts_per_second": 0.48032163873731454,
+              "successful_per_second": 0.48032163873731454,
+              "all_latency": {
+                "mean_ms": 89.17988340059917,
+                "p50_ms": 89.35475000180304,
+                "p95_ms": 94.671800150536,
+                "p99_ms": 95.58380011003464
+              },
+              "success_latency": {
+                "mean_ms": 89.17988340059917,
+                "p50_ms": 89.35475000180304,
+                "p95_ms": 94.671800150536,
+                "p99_ms": 95.58380011003464
+              }
+            },
+            "hybrid": {
+              "requests": 2,
+              "successful": 2,
+              "failed": 0,
+              "timed_out": 0,
+              "statuses": {
+                "200": 2
+              },
+              "elapsed_seconds": 12.491629600059241,
+              "attempts_per_second": 0.16010721291243818,
+              "successful_per_second": 0.16010721291243818,
+              "all_latency": {
+                "mean_ms": 146.69124991632998,
+                "p50_ms": 146.69124991632998,
+                "p95_ms": 154.837014968507,
+                "p99_ms": 155.56108297314495
+              },
+              "success_latency": {
+                "mean_ms": 146.69124991632998,
+                "p50_ms": 146.69124991632998,
+                "p95_ms": 154.837014968507,
+                "p99_ms": 155.56108297314495
+              }
+            },
+            "reranked": {
+              "requests": 4,
+              "successful": 4,
+              "failed": 0,
+              "timed_out": 0,
+              "statuses": {
+                "200": 4
+              },
+              "elapsed_seconds": 12.491629600059241,
+              "attempts_per_second": 0.32021442582487636,
+              "successful_per_second": 0.32021442582487636,
+              "all_latency": {
+                "mean_ms": 2820.782499969937,
+                "p50_ms": 2799.216200131923,
+                "p95_ms": 2943.2989799883217,
+                "p99_ms": 2962.787075964734
+              },
+              "success_latency": {
+                "mean_ms": 2820.782499969937,
+                "p50_ms": 2799.216200131923,
+                "p95_ms": 2943.2989799883217,
+                "p99_ms": 2962.787075964734
+              }
+            },
+            "router": {
+              "requests": 2,
+              "successful": 2,
+              "failed": 0,
+              "timed_out": 0,
+              "statuses": {
+                "200": 2
+              },
+              "elapsed_seconds": 12.491629600059241,
+              "attempts_per_second": 0.16010721291243818,
+              "successful_per_second": 0.16010721291243818,
+              "all_latency": {
+                "mean_ms": 146.56879985705018,
+                "p50_ms": 146.56879985705018,
+                "p95_ms": 150.86098974570632,
+                "p99_ms": 151.2425177358091
+              },
+              "success_latency": {
+                "mean_ms": 146.56879985705018,
+                "p50_ms": 146.56879985705018,
+                "p95_ms": 150.86098974570632,
+                "p99_ms": 151.2425177358091
+              }
+            }
+          },
+          "cancelled": 0,
+          "submission_duration_seconds": 10.0,
+          "drain_overrun_seconds": 2.491629600059241,
+          "stage": "soak_1_c1",
+          "concurrency": 1,
+          "stress": false
+        }
+      ],
+      "shutdown": "exit0; lifespan release/service-stop events checked"
+    },
+    "critical_runtime_sources_identical_across_five_runs": true,
+    "critical_source_paths": [
+      "app/api/dependencies.py",
+      "app/api/errors.py",
+      "app/api/examples.py",
+      "app/api/main.py",
+      "app/api/middleware.py",
+      "app/api/routes.py",
+      "app/api/schemas.py",
+      "app/api/__init__.py",
+      "app/api/__main__.py",
+      "app/core/config.py",
+      "app/core/errors.py",
+      "app/core/logging.py",
+      "app/core/__init__.py",
+      "app/data/download.py",
+      "app/data/loaders.py",
+      "app/data/models.py",
+      "app/data/nfcorpus.py",
+      "app/data/preprocessing.py",
+      "app/data/schemas.py",
+      "app/data/selection.py",
+      "app/data/__init__.py",
+      "app/retrieval/base.py",
+      "app/retrieval/bm25.py",
+      "app/retrieval/dense.py",
+      "app/retrieval/hybrid.py",
+      "app/retrieval/neural.py",
+      "app/retrieval/reranker.py",
+      "app/retrieval/router.py",
+      "app/retrieval/__init__.py",
+      "app/services/comparison_service.py",
+      "app/services/model_service.py",
+      "app/services/search_service.py",
+      "app/services/__init__.py",
+      "app/evaluation/api_soak.py",
+      "app/evaluation/api_workload.py",
+      "app/evaluation/soak_diagnostics.py",
+      "app/evaluation/native_diagnostics.py",
+      "app/evaluation/windows_native.py"
+    ],
+    "timed_archives_hash_match": true,
+    "five_runs_match_archived_timed_sources": true,
+    "frozen_policy_hashes": [
+      "31b0cef1d5969d2b79953be683050877038c34fabc4c560b4a1b8be8f90b67f8"
+    ],
+    "sampling_coverage": {
+      "c1_r1": {
+        "maximum_sample_gap_seconds": 1.0978146996349096,
+        "serving_pid_matches_native_snapshots": true
+      },
+      "c2_r1": {
+        "maximum_sample_gap_seconds": 1.0595197998918593,
+        "serving_pid_matches_native_snapshots": true
+      },
+      "c1_r2": {
+        "maximum_sample_gap_seconds": 1.0410354998894036,
+        "serving_pid_matches_native_snapshots": true
+      },
+      "c2_r2": {
+        "maximum_sample_gap_seconds": 1.1563262999989092,
+        "serving_pid_matches_native_snapshots": true
+      },
+      "c4_stress": {
+        "maximum_sample_gap_seconds": 1.1062173997052014,
+        "serving_pid_matches_native_snapshots": true
+      }
+    },
+    "required_artifacts_exist": {
+      "native_memory_summary.json": true,
+      "private_commit_timeseries.csv": true,
+      "rss_timeseries.csv": true,
+      "thread_count_timeseries.csv": true,
+      "repeated_run_comparison.csv": true,
+      "request_outcomes.csv": true,
+      "memory_attribution.json": true,
+      "phase6_2_report.json": true
+    },
+    "total_correctness_checks": 7416,
+    "completed_utc": "2026-11-10T06:08:01.193094+00:00"
+  },
+  "source_note": "All five timed runtime sources matched the preserved archive. Later benchmark-only CLI wiring fix is separately regression/real-smoke tested; old native checkpoint data are not rewritten as continuous traces."
+}

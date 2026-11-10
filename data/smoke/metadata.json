@@ -1,0 +1,7 @@
+{
+  "name": "rankforge-synthetic-smoke",
+  "version": "1",
+  "synthetic": true,
+  "purpose": "Authored software verification examples and judgments; not research evidence.",
+  "split": "test is a fixture label, not held-out research data."
+}

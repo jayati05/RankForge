@@ -1,0 +1,608 @@
+{
+  "run_id": "phase7b-20261110T073341Z-12c807e3",
+  "status": "complete",
+  "tracking_uri": "http://127.0.0.1:5000",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "up",
+        "-d",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "120",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "app.evaluation.benchmark",
+        "--dataset",
+        "data/smoke",
+        "--k",
+        "10",
+        "--output",
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\experiments\\results\\phase7b\\phase7b-20261110T073341Z-12c807e3\\new_smoke",
+        "--tracking",
+        "--tracking-uri",
+        "http://127.0.0.1:5000"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "restart",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "up",
+        "-d",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "120",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "ps",
+        "-q",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "up",
+        "-d",
+        "--no-build",
+        "--force-recreate",
+        "--wait",
+        "--wait-timeout",
+        "120",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "ps",
+        "-q",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "stop",
+        "--timeout",
+        "30",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "app.evaluation.benchmark",
+        "--dataset",
+        "data/smoke",
+        "--output",
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\experiments\\results\\phase7b\\phase7b-20261110T073341Z-12c807e3\\unavailable_smoke",
+        "--tracking",
+        "--tracking-uri",
+        "http://127.0.0.1:5000"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "up",
+        "-d",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "90",
+        "api"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "stop",
+        "--timeout",
+        "60",
+        "api"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "up",
+        "-d",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "120",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "config",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "logs",
+        "--no-color",
+        "mlflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--profile",
+        "tracking",
+        "stop",
+        "--timeout",
+        "60",
+        "api"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "imports": [
+    {
+      "source": "experiments\\reports\\phase2_scifact_full.json",
+      "source_sha256": "650a0bd309d9c5e742bfa836fadaeb94c36ab27e76822194431cd1913059a4ea",
+      "parent_run_id": "2b5488d503564d2baa03c5d9b7912de6",
+      "child_run_ids": [
+        "d64978887cd8432c9b2fa7b0ac174bfb",
+        "54c25d77ebc54926894cacebe5abf96a",
+        "b02ba026a852446a998d9dbb12da08e0",
+        "a1ae1b9bc712457c8a8b33e5835fa9d5"
+      ],
+      "duplicate_parent_reused": true,
+      "family": "evaluation"
+    },
+    {
+      "source": "experiments\\reports\\phase3_scifact.json",
+      "source_sha256": "a4e5c6765ac99e261f84b141034b223724ceb22b1a77d6c11edddb374bdecd7b",
+      "parent_run_id": "595aeff4a7bc4e38896306efd717428a",
+      "child_run_ids": [
+        "bc1b74f2215b46638deaa95be6739e3f",
+        "a9b0a8af9790471db595421a37fcddcf",
+        "52f3e0244f684188a5b5d2df992a7b60",
+        "5001dcc3600f40daa7af429c2172fb04",
+        "7ee7009713e44c7187434694d3f896a4"
+      ],
+      "duplicate_parent_reused": true,
+      "family": "evaluation"
+    },
+    {
+      "source": "experiments\\reports\\phase4_nfcorpus.json",
+      "source_sha256": "ab9b59a1e9aa3d0a29f43c4febdd3f4b0d3f50b981af4468cbb31eb69533463c",
+      "parent_run_id": "565f7fba866a4ddb90be362c83032983",
+      "child_run_ids": [
+        "8fa2a5642d9f4fb0a08b3a001d3d0bd6",
+        "82c8c52ac8354485b6386667b8a1c0d5",
+        "6773fe556d474f048a26081683ee95f8",
+        "aa3214e0db1f419e90998412c74bbd52",
+        "de0bb423b5594f6eb246b007ea2517b3"
+      ],
+      "duplicate_parent_reused": true,
+      "family": "evaluation"
+    },
+    {
+      "source": "experiments\\reports\\phase6_1-20261109T162840Z-f2dea9f54ecb.json",
+      "source_sha256": "750a3053edd2767bfc64482e54bfd21c8e4bde65b85d6a248870ebf7dfa0e936",
+      "parent_run_id": "46664e7c59dc41e4804aee05b3e32d04",
+      "child_run_ids": [
+        "cc6a3efa6135401c95c78a70560ff989",
+        "f7cceebe6f2646b8a96b9f095a73695e",
+        "46c86edcd2cd45fdb18aea290f9b2a59",
+        "fb501a5d6eda492daa48b459d5322daa",
+        "485277ac79fe47b7ba8bf5e6a463033f",
+        "16b6d181ea30436995463b705768b2e0",
+        "da00532990714cef8470d8c83ab477f6",
+        "2be67ec9cc5142e99b6a566ebd1fe5f0",
+        "81cb6aa6f0e742c2a8485e0cee974e66",
+        "994fc8a7c13b4d48894e6420455f7f1c",
+        "97a1e19156994f4d9f8909018516508c",
+        "d417ef37510c43fc9942bc96befcfc7b",
+        "46e09a4d856c4b589301315ae490b285",
+        "88031502488a4f7a96ae88f57a95dacf",
+        "68d97394f9a54931801a3af210682d2c"
+      ],
+      "duplicate_parent_reused": true,
+      "family": "operational"
+    },
+    {
+      "source": "experiments\\reports\\phase6_2-repeat-20261109T194018Z-c8b6ba59.json",
+      "source_sha256": "42e3e2443e769b511f85244e1b28f8a56d871ef4652975a6e5766a1ecab67a1f",
+      "parent_run_id": "05032591dbd14cd3a4364ba149aee411",
+      "child_run_ids": [
+        "fa79ad64cc2c43569b94afb36d8df3af",
+        "6dc958f315b4439cbabdf3b1088937b6",
+        "e26a3719141b45b2beeb1b0cbe1c2831",
+        "a11466e35c6544879823e1fb12e7c225",
+        "29ef2b5b9df540b18a0c1c887e6611c3",
+        "af9bd774578b4c5587e3c2c46fde1d0d",
+        "1e50b3aef61b4c8493d72b7c9a27746a",
+        "baa4ecdb1947485cb81cee8dd0fe67fb",
+        "ad07efede36949978b0db7faeba2ada4",
+        "ab3a781fe9bd4b92a7ae90e33a05f357",
+        "e559fe2287f045b1b266742e7ff6e038",
+        "b90825b22a894301a2ce55a16b615751",
+        "14ed309dcd894700803679521228eb57",
+        "aec0ee9abc2248d8b1a7211a1ba3ec9b",
+        "fc4cf4403303460d808001c52e34d855",
+        "6117838a59f344c7b03d2a67fd8b97ea",
+        "2da2d8bea82c493082856909dc54ad07",
+        "055e0e428ed9474b9caff0cfcf80e90e",
+        "d03abcc7d4af4dd8b85e3c07a90e5798",
+        "de46391372134c76a069369ea851984b",
+        "c8dc2ecffc694927a0fac81c00e4e05b",
+        "5ca60ce47c034b5585be77ae8c468d1c",
+        "cf604ea37ec74545b537f8bfbe2cfaa9",
+        "f561ac7f87744e149a30a663ee7081b9",
+        "48b9862f62644f8f9dd214588e5d9cc1"
+      ],
+      "duplicate_parent_reused": true,
+      "family": "operational"
+    },
+    {
+      "source": "experiments\\reports\\phase7a-20261110T063328Z-3ae104cc.json",
+      "source_sha256": "a8f0a08d848a2aba3851d71542bebaf5d7ae2726e96727535bb6678626c8ebed",
+      "parent_run_id": "2800bc1890cd4e3d8d2ead9b9afb5ddc",
+      "child_run_ids": [
+        "bd14a85b221f4301937acecb2c5e6390",
+        "11cb1c5af83e4ec8b8dd2760b60e900e",
+        "bd3fe66290a84d1da05aafa9c513fdaa",
+        "f65f095e648f4b9fb84efb2f7ef316d4",
+        "c3deee1103ae421a80291f7e63436b93",
+        "f6e35e187e9a44bead4bddd373881486",
+        "3c66277302964364a2853e582a2217f8",
+        "4cc3623ca26048f2ba2a06438c9fd1f8",
+        "785585d867e6490fbcab6c2f0c50e2f3",
+        "284d9bd758184922a59fdf9327b881a7",
+        "a80a462bf5804141a7c6d61ffd6578ce",
+        "5c6f8881bbcd4a86b0c8df32136d577c",
+        "96487a2ef24b430b941b296837a56010",
+        "5401a5d01b27433a82e94b1140d90b15",
+        "311e3dd07fa44a809d808f0cb9fe94cf",
+        "d948e9f87cdd4ed2b056aa4af2d347e5",
+        "6fad5cf3ca8e456ab45d6ef94dd6ae4b",
+        "c293eb9b3a394d41b54b54de767e4fd1",
+        "4d4bac1bde784f45a5b730a5112e6fee",
+        "215a7f562efc409288d5ed34d0ccb901",
+        "26f66186546d464d94d78ce37e47fe03",
+        "461cca8db3f64668bf3cf82a771cb542",
+        "9277265d00bb4c8c849254f163c8cb50",
+        "5c8f8a3dd3fb4eff8db74589f722cfeb",
+        "72acde50d5aa4b4a8da00147d6939410",
+        "ac8e543e8aca4200afc5806929e26fdc",
+        "1494b288f314493984ea21f496bda019",
+        "d6750882009848cfb685d9e9b95893bc",
+        "2ece7efa398c48f3b59e9e8a147842d1",
+        "22ef19c2b86d4565b949123853e0d21a",
+        "86a2f4995ef6484ab69b5cea0d02770d",
+        "1b363c9137d94205a7f7d108f5c464c4",
+        "608c7aaf88cb4320a91493847b07f562",
+        "530f9516b98744b09c030e446f30d887",
+        "93eb482c637e44ceabc32ee7fee3078e",
+        "6599819303794820ba59563e01f27c87",
+        "d1a98290e37c40ddaa222981f032cd5b",
+        "0a1a1d658ceb4beb8e736804310a8527",
+        "cb9b3272a6c04cd1951a5c1e4d776c6e",
+        "acc23ab747eb4560be383b5d9767040d",
+        "4e077d70d9d54effa338c4490d5d5850",
+        "c0b6bf21ff004c4daeec83192ecacc5e",
+        "1cbac7d962634586a37d884f952d8e25",
+        "c62baaf4761b41a5818b5d5308dd5a44",
+        "1560293f8240451fae122df5866357ca",
+        "66862e6bb8fe461796ddd1391cb8f253",
+        "2a605a9281a741c5b0c84077847a43b6",
+        "ac5b9159c11a490b98d638beb9a871df",
+        "cdb7c236c07240a28517d9ed88fafdb2",
+        "9a0f3188e4ae447a97b7ab359490381e",
+        "86c181e065f444d89ba09bede6fed833",
+        "64bcd7dee1a843b7a1d26bcd8c39ab54",
+        "d36369c2e09748e08ded55b4a821ff36",
+        "696adac3b72440438050b00f446b3b10",
+        "cdcd29c657274f45b78cf181b0c0dbb3",
+        "0d1ef2acdb1b49deb4b4c4f092c3212d",
+        "a52402622373486c858236e625d284cd",
+        "4b12923f284b4070ad13a629b977c3c4",
+        "6968dc917e6145e3b8cbbd51205385e5",
+        "c66935368a9548d38319c21fd982cb12",
+        "4e2f7bf8188847e4a1efb78b7ae0c54a",
+        "4cc9e2ce00c7416bbb583961741959b6",
+        "0712015feb614c50b01a531ec1d2c3e5",
+        "7e265d73465f463e9d260a089e7a7ee7",
+        "36c67e2460e441b79773813fb6d245c4",
+        "0703438ad8ac4d3fa902c38cb9285a48",
+        "cde94d51442947c781e21c83ab150179",
+        "c522cb2410134319984f4b8ea151bae9",
+        "ecc1fa04fdd04b59af862ed2658b5912",
+        "ca327189bd634937ba265d9b5fe4e1de"
+      ],
+      "duplicate_parent_reused": true,
+      "family": "operational"
+    }
+  ],
+  "metric_equality_checks": 3732,
+  "started_utc": "2026-11-10T07:33:41.653334+00:00",
+  "ui_verification": {
+    "html_status": 200,
+    "javascript_asset_status": 200,
+    "browser_rendering": "Not tested; HTTP HTML and JS asset verified."
+  },
+  "untrusted_host_status": 403,
+  "new_smoke": {
+    "status": "logged",
+    "historical": false,
+    "source": "C:\\Users\\Jayati\\Desktop\\RankForge\\experiments\\results\\phase7b\\phase7b-20261110T073341Z-12c807e3\\new_smoke\\20261110T073506Z-de37e894961e",
+    "schema": "rankforge-tracking-v2",
+    "source_sha256": "959b868259584e54bc2337d9847804f1aa2d2655a05c46cc14948e719fcf7fa7",
+    "source_bundle_sha256": "cdf76e6a538e8898afc7933f3888e50a19c960b8179458ecd2006e0b2a19048a",
+    "parent_run_id": "241e331aab964e91bf050cef84676ded",
+    "child_run_ids": [
+      "619daf6ef5b842af94663b2d2c8eb231"
+    ],
+    "experiment_name": "rankforge/evaluation",
+    "receipt_path": "C:\\Users\\Jayati\\Desktop\\RankForge\\experiments\\tracking\\a6ca980aa84d4d5e9981fe06e81730e5.json"
+  },
+  "artifact_hash_before_restart": "3d6be4d67329f75db59ca2e443889cea153e2454174f0f46aee4b37ad0ac13fa",
+  "artifact_hash_after_restart": "3d6be4d67329f75db59ca2e443889cea153e2454174f0f46aee4b37ad0ac13fa",
+  "recreated_different_container": true,
+  "artifact_hash_after_recreation": "3d6be4d67329f75db59ca2e443889cea153e2454174f0f46aee4b37ad0ac13fa",
+  "unavailable_tracking_preserved_local_results": true,
+  "api_without_mlflow": {
+    "bm25": true,
+    "dense": true,
+    "hybrid": true,
+    "reranked": true,
+    "router": true
+  },
+  "canonical_source_files_unchanged": 66,
+  "artifact_hash_after_recovery": "3d6be4d67329f75db59ca2e443889cea153e2454174f0f46aee4b37ad0ac13fa",
+  "finished_utc": "2026-11-10T07:37:24.013487+00:00",
+  "new_public_bm25": {
+    "status": "logged",
+    "historical": false,
+    "source": "C:\\Users\\Jayati\\Desktop\\RankForge\\experiments\\results\\phase7b\\phase7b-20261110T073341Z-12c807e3\\new_scifact\\20261110T073902Z-c5ce84baaaaa",
+    "schema": "rankforge-tracking-v2",
+    "source_sha256": "b62c899f7fe737af9399a0f8d3b65517f93b544fd99516979ae1ff13f18df33e",
+    "source_bundle_sha256": "61834662f93742f88c214c845301ee953575157fca3539ae8b3a2bb58dec5bb9",
+    "parent_run_id": "249f40c396734b5eb341a4daa5b0d70d",
+    "child_run_ids": [
+      "63c0f49d1937444081bf3c2a2902bbce"
+    ],
+    "experiment_name": "rankforge/evaluation",
+    "query_count": 25,
+    "corpus_size": 5183,
+    "metrics": {
+      "eval.recall_at_10": 0.64,
+      "eval.precision_at_10": 0.068,
+      "eval.mrr_at_10": 0.5513333333333333,
+      "eval.ndcg_at_10": 0.5723471463388092,
+      "eval.mean_latency_ms": 15.434928014874458,
+      "setup.index_build_seconds": 0.5955722997896373
+    },
+    "exact_metric_and_parameter_equality": true
+  },
+  "additional_public_metric_equality_checks": 6,
+  "total_metric_equality_checks": 3738,
+  "tracking_schema": "rankforge-tracking-v2",
+  "client_version": "3.5.1",
+  "historical_parent_count": 6,
+  "historical_child_count": 124,
+  "verified_new_parent_count": 2,
+  "verified_new_child_count": 2,
+  "final_verification": [
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 18.1367991999723,
+      "output": "........................................................................ [ 33%]\n........................................................................ [ 66%]\n........................................................................ [ 99%]\n..                                                                       [100%]\n218 passed in 16.69s\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "seconds": 0.11455560009926558,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "seconds": 0.11298150010406971,
+      "output": "94 files already formatted\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.3891777996905148,
+      "output": "No broken requirements found.\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "app.evaluation.comparison",
+        "--dataset",
+        "data/public/scifact",
+        "--replay",
+        "experiments/results/phase2/phase2-20261025T180228Z-bdac57e0c104"
+      ],
+      "exit_code": 0,
+      "seconds": 0.38627499993890524,
+      "output": "Verified 1200 per-query rows\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "app.evaluation.phase3",
+        "--replay",
+        "experiments/results/phase3/phase3-20261031T065803Z-72804b2af31a"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9178173998370767,
+      "output": "Verified 300 live baseline/router rows\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "app.evaluation.phase4",
+        "--replay",
+        "experiments/results/phase4/phase4-20261031T071828Z-46027d7d4330"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9284892999567091,
+      "output": "Verified 1615 external system/query rows\n"
+    }
+  ],
+  "phase7a_source_audit": {
+    "entries": 64,
+    "unchanged": 60,
+    "intentional_cli_tracking_hooks": [
+      "app/evaluation/phase4.py",
+      "app/evaluation/benchmark.py",
+      "app/evaluation/comparison.py",
+      "app/evaluation/phase3.py"
+    ],
+    "unexpected_changes": []
+  },
+  "phase7a_resources_unchanged": 55,
+  "pilot_note": "v1 pilot and failed SDK/encoding attempts remain preserved; finalized v2 includes normalized parameter/metric identity and separates container runtime from report-host Python. Filter finalized runs by v2 parent tags.",
+  "final_health_status": 200,
+  "server_version": "mlflow, version 3.5.1",
+  "limitations": "Local loopback service without authentication; trusted workstation only. SQLite single-worker; imports sequential, no distributed uniqueness transaction. UI HTML/JS verified, interactive browser rendering not tested. Historical source metrics preserved, not new inference. Previous resource-budget failures and leak uncertainty remain unchanged.",
+  "post_finalization_checks": [
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Jayati\\Desktop\\RankForge\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "95 files already formatted\n"
+    }
+  ],
+  "retained_trial_report": "experiments/reports/phase7b-20261110T072809Z-3c7b3a8b.json",
+  "final_state": {
+    "mlflow": "running, healthy, loopback port 5000",
+    "api": "stopped after verification",
+    "volumes": "backend and artifact volumes retained"
+  }
+}

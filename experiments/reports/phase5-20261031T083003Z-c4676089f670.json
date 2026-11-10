@@ -1,0 +1,494 @@
+{
+  "run_id": "phase5-20261031T083003Z-c4676089f670",
+  "status": "complete",
+  "timestamp_utc": "2026-10-31T08:30:03.106663+00:00",
+  "artifact_directory": "experiments/results/phase5/phase5-20261031T083003Z-c4676089f670",
+  "query_id": "1241",
+  "dataset": "BEIR SciFact",
+  "document_count": 5183,
+  "top_k": 10,
+  "baseline": "experiments/results/phase2/phase2-20261025T180228Z-bdac57e0c104",
+  "checks": [
+    "/health HTTP 200 with request ID",
+    "/models HTTP 200 with request ID",
+    "/methods HTTP 200 with request ID",
+    "/docs HTTP 200 with request ID",
+    "/redoc HTTP 200 with request ID",
+    "/openapi.json HTTP 200 with request ID",
+    "status endpoints initialize no resources",
+    "bm25 search HTTP 200",
+    "response/log correlation header",
+    "bm25 exact preserved top-10 IDs/ranks",
+    "bm25 preserved scores within 1e-5",
+    "bm25 warm request reuses resources",
+    "router search HTTP 200",
+    "router exact preserved top-10 IDs/ranks",
+    "router preserved scores within 1e-5",
+    "router uses saved hybrid fallback",
+    "exact frozen policy identity",
+    "router warm request reuses resources",
+    "hybrid-only router does not load cross-encoder",
+    "dense search HTTP 200",
+    "dense exact preserved top-10 IDs/ranks",
+    "dense preserved scores within 1e-5",
+    "dense warm request reuses resources",
+    "hybrid search HTTP 200",
+    "hybrid exact preserved top-10 IDs/ranks",
+    "hybrid preserved scores within 1e-5",
+    "hybrid warm request reuses resources",
+    "reranked search HTTP 200",
+    "reranked exact preserved top-10 IDs/ranks",
+    "reranked preserved scores within 1e-5",
+    "reranked warm request reuses resources",
+    "compare all five methods HTTP 200",
+    "ten pairwise rank agreements",
+    "invalid request has safe HTTP 422",
+    "oversized body HTTP 413",
+    "unknown route HTTP 404",
+    "wrong verb HTTP 405",
+    "sensitive-query logging canary accepted",
+    "all requested resources ready",
+    "encoder and scorer each initialized once",
+    "full queries absent from server logs",
+    "previous experiment/config/model/index bytes unchanged"
+  ],
+  "samples": [
+    {
+      "method": "bm25",
+      "stage": "first_call",
+      "http_round_trip_ms": 646.1887001059949,
+      "http_processing_ms": 645.046,
+      "latency": {
+        "initialization_ms": 626.9791997037828,
+        "retrieval_ms": 16.797299962490797,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.016099773347377777,
+        "queue_ms": 0.0064997002482414246,
+        "total_service_ms": 643.8278998248279
+      },
+      "initialized_resources": [
+        "corpus",
+        "bm25"
+      ]
+    },
+    {
+      "method": "bm25",
+      "stage": "warm",
+      "http_round_trip_ms": 16.369699966162443,
+      "http_processing_ms": 15.284,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 14.059599954634905,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.011600088328123093,
+        "queue_ms": 0.006400048732757568,
+        "total_service_ms": 14.10009991377592
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "bm25",
+      "stage": "warm",
+      "http_round_trip_ms": 14.231500215828419,
+      "http_processing_ms": 13.207,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 12.212799862027168,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.00909995287656784,
+        "queue_ms": 0.005000270903110504,
+        "total_service_ms": 12.244400102645159
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "bm25",
+      "stage": "warm",
+      "http_round_trip_ms": 14.386500231921673,
+      "http_processing_ms": 13.235,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 12.166999746114016,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.012500211596488953,
+        "queue_ms": 0.004800036549568176,
+        "total_service_ms": 12.208000291138887
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "router",
+      "stage": "first_call",
+      "http_round_trip_ms": 6617.159300018102,
+      "http_processing_ms": 6616.038,
+      "latency": {
+        "initialization_ms": 6572.549100033939,
+        "retrieval_ms": 42.31599997729063,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.012999866157770157,
+        "queue_ms": 0.00600004568696022,
+        "total_service_ms": 6614.910100121051
+      },
+      "initialized_resources": [
+        "policy",
+        "features",
+        "router",
+        "encoder",
+        "dense",
+        "hybrid"
+      ]
+    },
+    {
+      "method": "router",
+      "stage": "warm",
+      "http_round_trip_ms": 34.43829994648695,
+      "http_processing_ms": 33.244,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 32.11649972945452,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.013899989426136017,
+        "queue_ms": 0.005399808287620544,
+        "total_service_ms": 32.15700015425682
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "router",
+      "stage": "warm",
+      "http_round_trip_ms": 34.13809975609183,
+      "http_processing_ms": 33.002,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 31.874400097876787,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.013499986380338669,
+        "queue_ms": 0.00490015372633934,
+        "total_service_ms": 31.914900057017803
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "router",
+      "stage": "warm",
+      "http_round_trip_ms": 33.98329997435212,
+      "http_processing_ms": 32.787,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 31.461500097066164,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.014400109648704529,
+        "queue_ms": 0.005999580025672913,
+        "total_service_ms": 31.503200065344572
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "dense",
+      "stage": "first_call",
+      "http_round_trip_ms": 17.804599832743406,
+      "http_processing_ms": 16.716,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 15.459800139069557,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.012499745935201645,
+        "queue_ms": 0.012699980288743973,
+        "total_service_ms": 15.508399810642004
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "dense",
+      "stage": "warm",
+      "http_round_trip_ms": 16.811999958008528,
+      "http_processing_ms": 15.644,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 14.47629975154996,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.011200085282325745,
+        "queue_ms": 0.004500150680541992,
+        "total_service_ms": 14.50960012152791
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "dense",
+      "stage": "warm",
+      "http_round_trip_ms": 18.023299984633923,
+      "http_processing_ms": 16.786,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 15.636499971151352,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.012099742889404297,
+        "queue_ms": 0.004600267857313156,
+        "total_service_ms": 15.670999884605408
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "dense",
+      "stage": "warm",
+      "http_round_trip_ms": 17.08579994738102,
+      "http_processing_ms": 16.042,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 14.972500037401915,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.0129002146422863,
+        "queue_ms": 0.0041997991502285,
+        "total_service_ms": 15.00859996303916
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "hybrid",
+      "stage": "first_call",
+      "http_round_trip_ms": 33.86270022019744,
+      "http_processing_ms": 32.809,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 31.735700089484453,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.012299977242946625,
+        "queue_ms": 0.004500150680541992,
+        "total_service_ms": 31.77250036969781
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "hybrid",
+      "stage": "warm",
+      "http_round_trip_ms": 33.89459988102317,
+      "http_processing_ms": 32.725,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 31.564599834382534,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.010400079190731049,
+        "queue_ms": 0.0036996789276599884,
+        "total_service_ms": 31.59639984369278
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "hybrid",
+      "stage": "warm",
+      "http_round_trip_ms": 34.33900000527501,
+      "http_processing_ms": 32.951,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 31.371799763292074,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.011799857020378113,
+        "queue_ms": 0.004999805241823196,
+        "total_service_ms": 31.407199800014496
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "hybrid",
+      "stage": "warm",
+      "http_round_trip_ms": 33.82910043001175,
+      "http_processing_ms": 32.605,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 31.39379993081093,
+        "rerank_ms": 0.0,
+        "serialization_ms": 0.010500196367502213,
+        "queue_ms": 0.004400033503770828,
+        "total_service_ms": 31.426699832081795
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "reranked",
+      "stage": "first_call",
+      "http_round_trip_ms": 1527.0226001739502,
+      "http_processing_ms": 1525.529,
+      "latency": {
+        "initialization_ms": 148.42949993908405,
+        "retrieval_ms": 1375.6730002351105,
+        "rerank_ms": 1343.67989981547,
+        "serialization_ms": 0.019099563360214233,
+        "queue_ms": 0.004300381988286972,
+        "total_service_ms": 1524.1490001790226
+      },
+      "initialized_resources": [
+        "scorer",
+        "reranked"
+      ]
+    },
+    {
+      "method": "reranked",
+      "stage": "warm",
+      "http_round_trip_ms": 1333.1875996664166,
+      "http_processing_ms": 1331.823,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 1330.1078001968563,
+        "rerank_ms": 1294.2491001449525,
+        "serialization_ms": 0.01219986006617546,
+        "queue_ms": 0.004999805241823196,
+        "total_service_ms": 1330.1499001681805
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "reranked",
+      "stage": "warm",
+      "http_round_trip_ms": 1330.7850998826325,
+      "http_processing_ms": 1329.591,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 1328.2123999670148,
+        "rerank_ms": 1298.301000148058,
+        "serialization_ms": 0.012100208550691605,
+        "queue_ms": 0.004400033503770828,
+        "total_service_ms": 1328.2526996918023
+      },
+      "initialized_resources": []
+    },
+    {
+      "method": "reranked",
+      "stage": "warm",
+      "http_round_trip_ms": 1320.4717999324203,
+      "http_processing_ms": 1319.183,
+      "latency": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 1317.7666999399662,
+        "rerank_ms": 1285.4422996751964,
+        "serialization_ms": 0.013400334864854813,
+        "queue_ms": 0.004099681973457336,
+        "total_service_ms": 1317.8131999447942
+      },
+      "initialized_resources": []
+    }
+  ],
+  "service_code_sha256": {
+    "app/api/__init__.py": "a2f90369fc7638c75fba2107945d0bde8dec56e02014efbad63720bcac67f40b",
+    "app/api/__main__.py": "22356d7f05fd1edd56b65db4079088d31cf02ea994758d590664412b06f02e04",
+    "app/api/dependencies.py": "57fe799ffccb1ca7171996ad6ef860f07ff23f4890c2f926785dccd1cc676bef",
+    "app/api/errors.py": "c841f2a98ba35ae6525f4806be57df7e60fab11ca38bfc745137e4a2e14f8d4c",
+    "app/api/examples.py": "1dec164352ca434924d06d525739f1da57dd3c3280c461118c60d8da406e1e74",
+    "app/api/main.py": "b765a64635b832bfef420806d6ec96df16bcc24149afd7badd3076ba2907e854",
+    "app/api/middleware.py": "7f213b527e65d16ec9ee2fc7816b02c5641081fc6b6e2b8d145af0613806bc55",
+    "app/api/routes.py": "ef716dc4b5aba34ab4790050bcc46b86f95aff886072fb059d9797485be2c36d",
+    "app/api/schemas.py": "adc1d4f4fd16eab95afc8c05d5835f4f19e9eaec05bb64bb5916c61f0ba8df0a",
+    "app/core/__init__.py": "12ce064bde6b900b4eba020e841a2fc620a26bbd1b8ec2b1db58e0c574b8fd76",
+    "app/core/config.py": "69ad02012512f78162f9f589eeb473ec6552e2a13c17c3c6e46f5ac883741277",
+    "app/core/errors.py": "e2a3d8bdd12f9500e27ed3d8f8ee0f5633de753517cf8f1f3320dc000f0e258e",
+    "app/core/logging.py": "07d80255b4ca329cc62a6ce113a6237f696280269585f073eaf1e94f81a3d1f6",
+    "app/services/__init__.py": "c351a6803ffc6846a60d7481fb67088f0bf29b7e305a495cda8ac086e26470fa",
+    "app/services/comparison_service.py": "9ddc25dde8dd1bc078c76cec7f901e1e5334fb86110fa51411b0edbdc47011e9",
+    "app/services/model_service.py": "f4f29c722b3c74afc3d0121d639c935edcfae6cb7c23ebcc7a95051d01f14e99",
+    "app/services/search_service.py": "47bde4773871fb6c6dda0159c0482cb9925a877e42db0d26c329d7dde6031497",
+    "scripts/verify_api.py": "62d166b76b7ada38cbe77859d0cf2e2031b6d200ee04c23671fe70676d2e0f21"
+  },
+  "policy_record_sha256": "31b0cef1d5969d2b79953be683050877038c34fabc4c560b4a1b8be8f90b67f8",
+  "models": {
+    "dense": {
+      "state": "ready",
+      "initialization_ms": 6030.866399873048,
+      "error_code": null,
+      "identifier": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "device": "cpu",
+      "snapshot_present": true
+    },
+    "reranker": {
+      "state": "ready",
+      "initialization_ms": 147.67489954829216,
+      "error_code": null,
+      "identifier": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "device": "cpu",
+      "snapshot_present": true
+    }
+  },
+  "versions": {
+    "rankforge": "0.1.0",
+    "fastapi": "0.121.0",
+    "starlette": "0.49.3",
+    "pydantic": "2.12.3",
+    "uvicorn": "0.38.0",
+    "httpx": "0.28.1",
+    "anyio": "4.11.0",
+    "numpy": "2.2.6",
+    "sentence-transformers": "5.1.2",
+    "transformers": "4.57.1",
+    "torch": "2.9.0"
+  },
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "configuration": {
+    "device": "cpu",
+    "threads": 4,
+    "batch_size": 16,
+    "candidate_depth": 50,
+    "rrf_constant": 60,
+    "rerank_candidates": 20,
+    "workers": 1,
+    "read_only_cache": true,
+    "offline_models": true
+  },
+  "initialization_event_counts": {
+    "corpus": 1,
+    "bm25": 1,
+    "policy": 1,
+    "features": 1,
+    "router": 1,
+    "encoder": 1,
+    "dense": 1,
+    "hybrid": 1,
+    "scorer": 1,
+    "reranked": 1
+  },
+  "preserved_artifact_count": 134,
+  "latency_summary": [
+    {
+      "method": "bm25",
+      "warm_request_count": 3,
+      "first_http_ms": 646.1887001059949,
+      "first_initialization_ms": 626.9791997037828,
+      "warm_mean_http_ms": 14.995900137970844,
+      "warm_mean_retrieval_ms": 12.81313318759203
+    },
+    {
+      "method": "dense",
+      "warm_request_count": 3,
+      "first_http_ms": 17.804599832743406,
+      "first_initialization_ms": 0.0,
+      "warm_mean_http_ms": 17.30703329667449,
+      "warm_mean_retrieval_ms": 15.028433253367742
+    },
+    {
+      "method": "hybrid",
+      "warm_request_count": 3,
+      "first_http_ms": 33.86270022019744,
+      "first_initialization_ms": 0.0,
+      "warm_mean_http_ms": 34.020900105436645,
+      "warm_mean_retrieval_ms": 31.443399842828512
+    },
+    {
+      "method": "reranked",
+      "warm_request_count": 3,
+      "first_http_ms": 1527.0226001739502,
+      "first_initialization_ms": 148.42949993908405,
+      "warm_mean_http_ms": 1328.148166493823,
+      "warm_mean_retrieval_ms": 1325.3623000346124
+    },
+    {
+      "method": "router",
+      "warm_request_count": 3,
+      "first_http_ms": 6617.159300018102,
+      "first_initialization_ms": 6572.549100033939,
+      "warm_mean_http_ms": 34.18656655897697,
+      "warm_mean_retrieval_ms": 31.817466641465824
+    }
+  ],
+  "limitations": "One public query, sequential requests, three warm requests per method by default, one CPU process. Shared first-use initialization follows bm25/router/dense/hybrid/reranked order. Not a load test, quality evaluation or representative latency benchmark; no percentiles/confidence intervals. HTTP wall time includes response receipt, excludes client response JSON decoding. Service timing excludes FastAPI JSON encoding/network; rerank_ms is included in retrieval_ms. Windows child is explicitly terminated after HTTP checks; graceful shutdown is exercised separately by lifespan tests.",
+  "finished_at_utc": "2026-10-31T08:30:19.043686+00:00"
+}
